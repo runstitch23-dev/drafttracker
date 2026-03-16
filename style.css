@@ -168,6 +168,14 @@ body {
   margin-top: 10px;
 }
 
+.bracket-upload-block {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
 .draft-team-order {
   margin-top: 12px;
 }

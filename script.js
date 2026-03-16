@@ -7,6 +7,7 @@ const state = {
   myTeam: 1,
   snake: true,
   draftTeams: [],
+  teamRegions: {},
   setupOpen: false,
   rankingsOpen: false,
   rankings: [],
@@ -65,6 +66,9 @@ const el = {
   saveSetupBtn: document.getElementById("saveSetupBtn"),
   resetDraftBtn: document.getElementById("resetDraftBtn"),
   rankingsInput: document.getElementById("rankingsInput"),
+  bracketFileInput: document.getElementById("bracketFileInput"),
+  clearRegionMapBtn: document.getElementById("clearRegionMapBtn"),
+  bracketStatus: document.getElementById("bracketStatus"),
   loadRankingsBtn: document.getElementById("loadRankingsBtn"),
   clearRankingsBtn: document.getElementById("clearRankingsBtn"),
   rankingsStatus: document.getElementById("rankingsStatus"),
@@ -74,6 +78,7 @@ const el = {
   pickNumberInput: document.getElementById("pickNumberInput"),
   pickTeamInput: document.getElementById("pickTeamInput"),
   pickPlayerInput: document.getElementById("pickPlayerInput"),
+  pickRegionInput: document.getElementById("pickRegionInput"),
   markMineInput: document.getElementById("markMineInput"),
   addPickBtn: document.getElementById("addPickBtn"),
   draftBestBtn: document.getElementById("draftBestBtn"),
@@ -91,6 +96,32 @@ const tournamentPlayers = Array.isArray(window.TOURNAMENT_PLAYERS) ? window.TOUR
 
 function normalizeName(name) {
   return name.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function canonicalizeRegion(value) {
+  const raw = String(value || "").trim();
+  if (!raw) {
+    return "";
+  }
+  const cleaned = raw.toLowerCase().replace(/\bregion\b/g, "").trim();
+  if (cleaned === "east") return "East";
+  if (cleaned === "west") return "West";
+  if (cleaned === "south") return "South";
+  if (cleaned === "midwest" || cleaned === "mid-west") return "Midwest";
+  return raw.charAt(0).toUpperCase() + raw.slice(1);
+}
+
+function isRegionToken(value) {
+  const normalized = canonicalizeRegion(value).toLowerCase();
+  return normalized === "east" || normalized === "west" || normalized === "south" || normalized === "midwest";
+}
+
+function getRegionForTeam(teamName) {
+  const key = normalizeName(teamName || "");
+  if (!key) {
+    return "";
+  }
+  return state.teamRegions[key] || "";
 }
 
 function escapeHtml(text) {
@@ -373,6 +404,102 @@ function findTournamentPlayer(name, teamHint = "") {
   return exact || matches[0];
 }
 
+function addTeamRegionEntry(targetMap, team, region) {
+  const teamName = String(team || "").trim();
+  const regionName = canonicalizeRegion(region);
+  if (!teamName || !regionName) {
+    return;
+  }
+  targetMap[normalizeName(teamName)] = regionName;
+}
+
+function parseBracketRegionMap(text) {
+  const map = {};
+  const source = String(text || "").trim();
+  if (!source) {
+    return map;
+  }
+
+  // JSON object {"Duke":"East"} or array [{"team":"Duke","region":"East"}]
+  try {
+    const parsed = JSON.parse(source);
+    if (Array.isArray(parsed)) {
+      parsed.forEach((entry) => {
+        if (entry && typeof entry === "object") {
+          addTeamRegionEntry(map, entry.team || entry.school || entry.name, entry.region);
+        }
+      });
+    } else if (parsed && typeof parsed === "object") {
+      Object.entries(parsed).forEach(([team, region]) => {
+        addTeamRegionEntry(map, team, region);
+      });
+    }
+    if (Object.keys(map).length) {
+      return map;
+    }
+  } catch {
+    // fall through to line-based parsing
+  }
+
+  source.split(/\r?\n/).forEach((rawLine) => {
+    const line = rawLine.trim();
+    if (!line) return;
+
+    // Region: Team A, Team B
+    const colonMatch = line.match(/^([^:]+):\s*(.+)$/);
+    if (colonMatch && isRegionToken(colonMatch[1])) {
+      const region = canonicalizeRegion(colonMatch[1]);
+      colonMatch[2]
+        .split(/[;,|]/)
+        .map((part) => part.trim())
+        .filter(Boolean)
+        .forEach((team) => addTeamRegionEntry(map, team, region));
+      return;
+    }
+
+    const delimiter = line.includes("\t")
+      ? "\t"
+      : line.includes(",")
+        ? ","
+        : line.includes("|")
+          ? "|"
+          : line.includes(";")
+            ? ";"
+            : line.includes(" - ")
+              ? " - "
+              : null;
+
+    if (!delimiter) {
+      return;
+    }
+
+    const parts = line
+      .split(delimiter)
+      .map((part) => part.trim())
+      .filter(Boolean);
+    if (parts.length < 2) {
+      return;
+    }
+
+    if (isRegionToken(parts[0])) {
+      const region = canonicalizeRegion(parts[0]);
+      parts.slice(1).forEach((team) => addTeamRegionEntry(map, team, region));
+      return;
+    }
+
+    if (isRegionToken(parts[parts.length - 1])) {
+      const region = canonicalizeRegion(parts[parts.length - 1]);
+      const team = parts.slice(0, -1).join(" ");
+      addTeamRegionEntry(map, team, region);
+      return;
+    }
+
+    addTeamRegionEntry(map, parts[0], parts[1]);
+  });
+
+  return map;
+}
+
 function applyStateSnapshot(snapshot) {
   if (!snapshot || typeof snapshot !== "object") {
     return;
@@ -383,6 +510,16 @@ function applyStateSnapshot(snapshot) {
   state.myTeam = Number(snapshot.myTeam) || 1;
   state.snake = Boolean(snapshot.snake);
   state.draftTeams = Array.isArray(snapshot.draftTeams) ? snapshot.draftTeams : [];
+  state.teamRegions = {};
+  if (snapshot.teamRegions && typeof snapshot.teamRegions === "object") {
+    Object.entries(snapshot.teamRegions).forEach(([teamKey, region]) => {
+      const normalizedTeamKey = normalizeName(teamKey);
+      const normalizedRegion = canonicalizeRegion(region);
+      if (normalizedTeamKey && normalizedRegion) {
+        state.teamRegions[normalizedTeamKey] = normalizedRegion;
+      }
+    });
+  }
   state.setupOpen = Boolean(snapshot.setupOpen);
   state.rankingsOpen = Boolean(snapshot.rankingsOpen);
   state.rankings = Array.isArray(snapshot.rankings) ? snapshot.rankings : [];
@@ -594,6 +731,7 @@ function renderDraftLog() {
   state.picks.forEach((pick) => {
     const teamColor = getTeamColor(pick.team);
     const draftTeamLabel = getDraftTeamName(pick.team);
+    const resolvedRegion = pick.region || getRegionForTeam(pick.teamName);
     const row = document.createElement("tr");
     row.className = "draft-log-row";
     row.style.setProperty("--team-color", teamColor);
@@ -604,7 +742,7 @@ function renderDraftLog() {
       <td>${pick.pick}</td>
       <td>${escapeHtml(pick.player)}</td>
       <td>${escapeHtml(pick.teamName || "-")}</td>
-      <td>${escapeHtml(pick.region || "-")}</td>
+      <td>${escapeHtml(resolvedRegion || "-")}</td>
       <td><span class="team-pill" style="--team-color:${teamColor}">${escapeHtml(draftTeamLabel)}</span></td>
       <td>${pick.round}</td>
     `;
@@ -654,6 +792,43 @@ function syncRankingsInput() {
 
 function setDraftMessage(text) {
   el.draftStatus.textContent = text;
+}
+
+function setBracketStatus(text, isError = false) {
+  el.bracketStatus.textContent = text;
+  el.bracketStatus.classList.toggle("error-text", Boolean(isError));
+}
+
+async function handleBracketFileUpload(event) {
+  const file = event.target.files && event.target.files[0];
+  if (!file) {
+    return;
+  }
+
+  try {
+    const text = await file.text();
+    const parsedMap = parseBracketRegionMap(text);
+    const count = Object.keys(parsedMap).length;
+    if (!count) {
+      throw new Error("No team-region mappings detected. Use CSV/TXT/JSON like Duke,East.");
+    }
+    state.teamRegions = {
+      ...state.teamRegions,
+      ...parsedMap
+    };
+    setBracketStatus(`Loaded ${count} team-region mappings from ${file.name}.`);
+    updateAll();
+  } catch (error) {
+    setBracketStatus(error.message || "Could not parse bracket file.", true);
+  } finally {
+    el.bracketFileInput.value = "";
+  }
+}
+
+function clearRegionMap() {
+  state.teamRegions = {};
+  setBracketStatus("Cleared team-region mapping.");
+  updateAll();
 }
 
 function connectSocket() {
@@ -863,6 +1038,24 @@ function onLoadRankings() {
   updateAll();
 }
 
+function suggestRegionFromPlayerInput() {
+  if (el.pickRegionInput.value.trim()) {
+    return;
+  }
+  const raw = el.pickPlayerInput.value.trim();
+  if (!raw) {
+    return;
+  }
+  const parsed = parsePlayerInput(raw);
+  const ranking = findRankingByName(parsed.name);
+  const rosterPlayer = findTournamentPlayer(parsed.name, parsed.teamHint || (ranking ? ranking.team : ""));
+  const teamName = ranking ? ranking.team : rosterPlayer ? rosterPlayer.team || "" : parsed.teamHint;
+  const region = getRegionForTeam(teamName);
+  if (region) {
+    el.pickRegionInput.value = region;
+  }
+}
+
 function onClearRankings() {
   state.rankings = [];
   el.rankingsInput.value = "";
@@ -902,6 +1095,9 @@ function onAddPick({ autoBest = false } = {}) {
     : rosterPlayer
       ? rosterPlayer.team || ""
       : parsed.teamHint;
+  const manualRegion = canonicalizeRegion(el.pickRegionInput.value);
+  const mappedRegion = getRegionForTeam(resolvedTeamName);
+  const resolvedRegion = manualRegion || mappedRegion || "";
 
   const draftedSet = getDraftedSet();
   if (draftedSet.has(normalizeName(resolvedName))) {
@@ -915,9 +1111,13 @@ function onAddPick({ autoBest = false } = {}) {
     team,
     player: resolvedName,
     teamName: resolvedTeamName || "",
-    region: "",
+    region: resolvedRegion,
     isMine: Boolean(el.markMineInput.checked) || team === state.myTeam
   };
+
+  if (resolvedTeamName && resolvedRegion) {
+    state.teamRegions[normalizeName(resolvedTeamName)] = resolvedRegion;
+  }
 
   state.picks.push(pick);
   state.picks.sort((a, b) => a.pick - b.pick);
@@ -926,6 +1126,7 @@ function onAddPick({ autoBest = false } = {}) {
   state.currentPick = Math.min(totalPicks, Math.max(...state.picks.map((p) => p.pick)) + 1);
 
   el.pickPlayerInput.value = "";
+  el.pickRegionInput.value = "";
   setDraftMessage(`Added pick ${pick.pick}: ${pick.player}.`);
   updateAll();
 }
@@ -1013,8 +1214,12 @@ function attachEvents() {
     persist();
   });
   el.resetDraftBtn.addEventListener("click", onResetDraft);
+  el.bracketFileInput.addEventListener("change", handleBracketFileUpload);
+  el.clearRegionMapBtn.addEventListener("click", clearRegionMap);
   el.loadRankingsBtn.addEventListener("click", onLoadRankings);
   el.clearRankingsBtn.addEventListener("click", onClearRankings);
+  el.pickPlayerInput.addEventListener("change", suggestRegionFromPlayerInput);
+  el.pickPlayerInput.addEventListener("blur", suggestRegionFromPlayerInput);
   el.addPickBtn.addEventListener("click", () => onAddPick());
   el.draftBestBtn.addEventListener("click", onDraftBestForMyTeam);
   el.undoPickBtn.addEventListener("click", onUndoPick);

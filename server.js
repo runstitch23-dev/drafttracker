@@ -108,6 +108,7 @@ function defaultState() {
     myTeam: 1,
     snake: true,
     draftTeams: [],
+    teamRegions: {},
     setupOpen: false,
     rankingsOpen: false,
     rankings: [],
