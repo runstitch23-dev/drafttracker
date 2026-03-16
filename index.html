@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>March Madness Draft Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>March Madness Draft Tracker</h1>
+      <p>Track picks live, keep your roster updated, and monitor best available players.</p>
+    </header>
+
+    <section class="panel settings">
+      <button id="toggleSetupBtn" type="button" class="panel-toggle" aria-expanded="false" aria-controls="setupContent">
+        <span>Draft Setup</span>
+        <span id="toggleSetupIcon" class="panel-toggle-icon">+</span>
+      </button>
+      <div id="setupContent" class="settings-content" hidden>
+        <div class="grid-2">
+          <label>
+            Teams
+            <input id="teamsInput" type="number" min="2" max="40" value="15">
+          </label>
+          <label>
+            Rounds
+            <input id="roundsInput" type="number" min="1" max="30" value="10">
+          </label>
+          <label>
+            Your Team Slot
+            <input id="myTeamInput" type="number" min="1" max="15" value="1">
+          </label>
+          <label class="checkbox-row">
+            <input id="snakeInput" type="checkbox" checked>
+            Snake Draft
+          </label>
+        </div>
+        <div class="draft-team-order">
+          <h3>Draft Team Names (Draft Order)</h3>
+          <p class="muted">Each slot maps to draft order position: 1, 2, 3...</p>
+          <div id="draftTeamsContainer" class="team-name-grid"></div>
+        </div>
+        <div class="actions">
+          <button id="saveSetupBtn" type="button">Save Setup</button>
+          <button id="resetDraftBtn" type="button" class="danger">Reset Draft</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel rankings">
+      <button id="toggleRankingsBtn" type="button" class="panel-toggle" aria-expanded="false" aria-controls="rankingsContent">
+        <span>Rankings Input</span>
+        <span id="toggleRankingsIcon" class="panel-toggle-icon">+</span>
+      </button>
+      <div id="rankingsContent" class="rankings-content" hidden>
+        <p>Paste one player per line. Use either <code>Player - Team</code> or <code>Team: Player</code>.</p>
+        <textarea id="rankingsInput" rows="10" placeholder="Example:
+Cameron Boozer - Duke
+Florida: Thomas Haugh"></textarea>
+        <div class="actions">
+          <button id="loadRankingsBtn" type="button">Load Rankings</button>
+          <button id="clearRankingsBtn" type="button" class="danger">Clear Rankings</button>
+        </div>
+        <p id="rankingsStatus" class="muted"></p>
+      </div>
+    </section>
+
+    <section class="panel my-roster">
+      <h2>My Roster</h2>
+      <ul id="myRosterList" class="simple-list"></ul>
+    </section>
+
+    <section class="panel forecast">
+      <h2>Turn Forecast</h2>
+      <div class="forecast-grid">
+        <div>
+          <h3>Your Next Picks</h3>
+          <ul id="nextPicksList" class="simple-list"></ul>
+        </div>
+        <div>
+          <h3>Likely Available At Next Turn</h3>
+          <ul id="nextTurnTargets" class="simple-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel board">
+      <h2>Live Draft Log</h2>
+      <div class="draft-status">
+        <div><strong>Current Pick:</strong> <span id="currentPickText"></span></div>
+        <div><strong>Expected Team:</strong> <span id="expectedTeamText"></span></div>
+        <div><strong>Picks Until Your Turn:</strong> <span id="untilMyTurnText"></span></div>
+      </div>
+      <div class="grid-3">
+        <label>
+          Pick #
+          <input id="pickNumberInput" type="number" min="1">
+        </label>
+        <label>
+          Team Slot
+          <input id="pickTeamInput" type="number" min="1">
+        </label>
+        <label>
+          Player
+          <input id="pickPlayerInput" type="text" list="playersDatalist" placeholder="Player name">
+          <datalist id="playersDatalist"></datalist>
+        </label>
+      </div>
+      <div class="actions">
+        <label class="checkbox-row">
+          <input id="markMineInput" type="checkbox">
+          This is my pick
+        </label>
+        <button id="addPickBtn" type="button">Add Pick</button>
+        <button id="draftBestBtn" type="button">Draft Best Available (My Team)</button>
+        <button id="undoPickBtn" type="button" class="secondary">Undo Last Pick</button>
+      </div>
+      <p id="draftStatus" class="muted"></p>
+      <div class="table-wrap">
+        <table class="draft-log-table">
+          <thead>
+            <tr>
+              <th>Draft Pick #</th>
+              <th>Player Name</th>
+              <th>Team He Plays For</th>
+              <th>Draft Team</th>
+              <th>Round</th>
+            </tr>
+          </thead>
+          <tbody id="draftLogBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel available">
+      <h2>Best Available</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Avail Rank</th>
+              <th>Overall Rank</th>
+              <th>Player</th>
+              <th>Team</th>
+            </tr>
+          </thead>
+          <tbody id="bestAvailableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="tournamentPlayers.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

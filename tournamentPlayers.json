@@ -1,0 +1,6308 @@
+{
+  "source": "ESPN public site API",
+  "season": 2026,
+  "teamCount": 68,
+  "playerCount": 1050,
+  "players": [
+    {
+      "name": "Amani Lyles",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5108060"
+    },
+    {
+      "name": "Bowen Hardman",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5105840"
+    },
+    {
+      "name": "Chabi Barre",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5105882"
+    },
+    {
+      "name": "Cody Head",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5176192"
+    },
+    {
+      "name": "Conner Groce",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5241472"
+    },
+    {
+      "name": "Eric Mahaffey",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5241471"
+    },
+    {
+      "name": "Evan Mahaffey",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5105847"
+    },
+    {
+      "name": "Josh Henderson",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5314280"
+    },
+    {
+      "name": "Marvin Musiime-Kamali",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5176139"
+    },
+    {
+      "name": "Ognjen Stankovic",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5314282"
+    },
+    {
+      "name": "Rich Brisco",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5241469"
+    },
+    {
+      "name": "Shammah Scott",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5106652"
+    },
+    {
+      "name": "Sharron Young",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5241470"
+    },
+    {
+      "name": "Tai Perkins",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5314279"
+    },
+    {
+      "name": "Tavari Johnson",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5108059"
+    },
+    {
+      "name": "Zach Halligan",
+      "team": "Akron",
+      "teamId": "2006",
+      "id": "5176138"
+    },
+    {
+      "name": "Aden Holloway",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4684276"
+    },
+    {
+      "name": "Aiden Sherrell",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4873184"
+    },
+    {
+      "name": "Amari Allen",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5101833"
+    },
+    {
+      "name": "Collins Onyejiaka",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5311499"
+    },
+    {
+      "name": "Davion Hannah",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5101805"
+    },
+    {
+      "name": "Houston Mallette",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4709141"
+    },
+    {
+      "name": "Jack Fagan",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5325014"
+    },
+    {
+      "name": "Jacob Martin",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5325011"
+    },
+    {
+      "name": "Jalil Bethea",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5101656"
+    },
+    {
+      "name": "Keitenn Bristow",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5241440"
+    },
+    {
+      "name": "Klark James",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5325013"
+    },
+    {
+      "name": "Labaron Philon Jr.",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4873090"
+    },
+    {
+      "name": "Latrell Wrightsell",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4702484"
+    },
+    {
+      "name": "London Jemison",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5144139"
+    },
+    {
+      "name": "Noah Williamson",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "5105668"
+    },
+    {
+      "name": "Preston Murphy Jr.",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4433289"
+    },
+    {
+      "name": "Taylor Bol Bowen",
+      "team": "Alabama",
+      "teamId": "333",
+      "id": "4685658"
+    },
+    {
+      "name": "Addison Arnold",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "4896359"
+    },
+    {
+      "name": "Anthony Dell'Orso",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5108141"
+    },
+    {
+      "name": "Brayden Burries",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5082206"
+    },
+    {
+      "name": "Bryce James",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5082287"
+    },
+    {
+      "name": "Dwayne Aristode",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5186456"
+    },
+    {
+      "name": "Evan Nelson",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "4702960"
+    },
+    {
+      "name": "Ivan Kharchenkov",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5311896"
+    },
+    {
+      "name": "Jackson Cook",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5174956"
+    },
+    {
+      "name": "Jackson Francois",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5105542"
+    },
+    {
+      "name": "Jaden Bradley",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "4432737"
+    },
+    {
+      "name": "Koa Peat",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5041953"
+    },
+    {
+      "name": "Mabil Mawut",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5311898"
+    },
+    {
+      "name": "Motiejus Krivas",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5174954"
+    },
+    {
+      "name": "Sidi Gueye",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5311897"
+    },
+    {
+      "name": "Sven Djopmo",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5239487"
+    },
+    {
+      "name": "Tobe Awaka",
+      "team": "Arizona",
+      "teamId": "12",
+      "id": "5105555"
+    },
+    {
+      "name": "Amere Brown",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5144085"
+    },
+    {
+      "name": "Ayden Kelley",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5238196"
+    },
+    {
+      "name": "Billy Richmond III",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5060732"
+    },
+    {
+      "name": "D.J. Wagner",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "4683777"
+    },
+    {
+      "name": "Darius Acuff Jr.",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5142620"
+    },
+    {
+      "name": "Elmir D\u017eafic",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5311500"
+    },
+    {
+      "name": "Isaiah Sealy",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5101797"
+    },
+    {
+      "name": "Jaden Karuletwa",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5238194"
+    },
+    {
+      "name": "Karim Rtail",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5281348"
+    },
+    {
+      "name": "Karter Knox",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "4869777"
+    },
+    {
+      "name": "Malique Ewin",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5105546"
+    },
+    {
+      "name": "Meleek Thomas",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5041951"
+    },
+    {
+      "name": "Nick Pringle",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "4703887"
+    },
+    {
+      "name": "Paulo Semedo",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "5258495"
+    },
+    {
+      "name": "Trevon Brazile",
+      "team": "Arkansas",
+      "teamId": "8",
+      "id": "4698719"
+    },
+    {
+      "name": "Abdullah Ahmed",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5183975"
+    },
+    {
+      "name": "AJ Dybantsa",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5142718"
+    },
+    {
+      "name": "Aleksej Kostic",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5311908"
+    },
+    {
+      "name": "Brody Kozlowski",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5243214"
+    },
+    {
+      "name": "Dawson Baker",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "4702626"
+    },
+    {
+      "name": "Dominique Diomande",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5262996"
+    },
+    {
+      "name": "Jared McGregor",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5105466"
+    },
+    {
+      "name": "Keba Keita",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5105647"
+    },
+    {
+      "name": "Kennard Davis Jr.",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "4685654"
+    },
+    {
+      "name": "Khadim Mboup",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5262601"
+    },
+    {
+      "name": "KJ Perry",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5329424"
+    },
+    {
+      "name": "Mihailo Bo\u0161kovic",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5243211"
+    },
+    {
+      "name": "Nate Pickens",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5107152"
+    },
+    {
+      "name": "Richie Saunders",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5105462"
+    },
+    {
+      "name": "Robert Wright III",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5060709"
+    },
+    {
+      "name": "Tyler Mrus",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5176299"
+    },
+    {
+      "name": "Xavion Staton",
+      "team": "BYU",
+      "teamId": "252",
+      "id": "5143304"
+    },
+    {
+      "name": "Bradey Henige",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5241326"
+    },
+    {
+      "name": "Chase Mayo Harmon",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5314829"
+    },
+    {
+      "name": "Devon Malcolm",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5241323"
+    },
+    {
+      "name": "Dominique Daniels Jr.",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5178207"
+    },
+    {
+      "name": "Jalen Dollar",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5241322"
+    },
+    {
+      "name": "Jayden Jackson",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "4897936"
+    },
+    {
+      "name": "Jonathan Griman",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5178211"
+    },
+    {
+      "name": "Jordan Muller",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5314832"
+    },
+    {
+      "name": "Martel Williams",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "4702158"
+    },
+    {
+      "name": "Miles Daniels",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5314830"
+    },
+    {
+      "name": "Monty Bowser",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "4591258"
+    },
+    {
+      "name": "Mouhamadou Dioum",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5241324"
+    },
+    {
+      "name": "Nate Garcia",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5314834"
+    },
+    {
+      "name": "OJ Blankson",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5314833"
+    },
+    {
+      "name": "Rene D'Amelio",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5314831"
+    },
+    {
+      "name": "Thomas Ndong",
+      "team": "CA Baptist",
+      "teamId": "2856",
+      "id": "5175014"
+    },
+    {
+      "name": "Ace Buckner",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5179085"
+    },
+    {
+      "name": "Blake Davidson",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5311534"
+    },
+    {
+      "name": "Butta Johnson",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5107144"
+    },
+    {
+      "name": "Carter Welling",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5176397"
+    },
+    {
+      "name": "Chase Thompson",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5196962"
+    },
+    {
+      "name": "Dallas Thomas",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "4869781"
+    },
+    {
+      "name": "Dillon Hunter",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5105445"
+    },
+    {
+      "name": "Jake Wahlin",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5174977"
+    },
+    {
+      "name": "Jestin Porter",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5106880"
+    },
+    {
+      "name": "Nick Davidson",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "4699440"
+    },
+    {
+      "name": "RJ Godfrey",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5105449"
+    },
+    {
+      "name": "Trent Steinour",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5196959"
+    },
+    {
+      "name": "Zac Foster",
+      "team": "Clemson",
+      "teamId": "228",
+      "id": "5237299"
+    },
+    {
+      "name": "Brock Davis",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5341547"
+    },
+    {
+      "name": "Caleb Foster",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "4711256"
+    },
+    {
+      "name": "Cameron Boozer",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5041935"
+    },
+    {
+      "name": "Cameron Sheffield",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "4432321"
+    },
+    {
+      "name": "Cayden Boozer",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5041937"
+    },
+    {
+      "name": "Dame Sarr",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5287474"
+    },
+    {
+      "name": "Darren Harris",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "4873107"
+    },
+    {
+      "name": "Ifeanyi Ufochukwu",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5107141"
+    },
+    {
+      "name": "Isaiah Evans",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5061585"
+    },
+    {
+      "name": "Jack Scott",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "4888720"
+    },
+    {
+      "name": "Maliq Brown",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5105337"
+    },
+    {
+      "name": "Nikolas Khamenia",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5144124"
+    },
+    {
+      "name": "Patrick Ngongba II",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "4873209"
+    },
+    {
+      "name": "Sebastian Wilkins",
+      "team": "Duke",
+      "teamId": "150",
+      "id": "5144150"
+    },
+    {
+      "name": "AJ Brown",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5108014"
+    },
+    {
+      "name": "Alex Condon",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5174657"
+    },
+    {
+      "name": "Alex Kovatchev",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5175405"
+    },
+    {
+      "name": "Alex Lloyd",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5041948"
+    },
+    {
+      "name": "Boogie Fland",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5238195"
+    },
+    {
+      "name": "CJ Ingram",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5217184"
+    },
+    {
+      "name": "Cooper Josefsberg",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5174660"
+    },
+    {
+      "name": "Isaiah Brown",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5144372"
+    },
+    {
+      "name": "Micah Handlogten",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5108992"
+    },
+    {
+      "name": "Olivier Rioux",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5184753"
+    },
+    {
+      "name": "Rueben Chinyelu",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5174971"
+    },
+    {
+      "name": "Thomas Haugh",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5080489"
+    },
+    {
+      "name": "Urban Klavzar",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5238200"
+    },
+    {
+      "name": "Viktor Mikic",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5238201"
+    },
+    {
+      "name": "Xaivian Lee",
+      "team": "Florida",
+      "teamId": "57",
+      "id": "5107169"
+    },
+    {
+      "name": "Abijah Franklin",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5314508"
+    },
+    {
+      "name": "Alex Wilkins",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5314511"
+    },
+    {
+      "name": "Asa Thomas",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "4895755"
+    },
+    {
+      "name": "Ben Vander Wal",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5107369"
+    },
+    {
+      "name": "Charles Johnston",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5243230"
+    },
+    {
+      "name": "Cole Bowser",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5314509"
+    },
+    {
+      "name": "Collin O'Neal",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5314510"
+    },
+    {
+      "name": "Cooper Bowser",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5176136"
+    },
+    {
+      "name": "Davis Molnar",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5107368"
+    },
+    {
+      "name": "Eddrin Bronson",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5176133"
+    },
+    {
+      "name": "Gunnar Lewis",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5314512"
+    },
+    {
+      "name": "Mason Smith",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5243231"
+    },
+    {
+      "name": "Owen Ritger",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5314514"
+    },
+    {
+      "name": "Thomas Tillman",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "5176205"
+    },
+    {
+      "name": "Tom House",
+      "team": "Furman",
+      "teamId": "231",
+      "id": "4896557"
+    },
+    {
+      "name": "Blue Cain",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5174661"
+    },
+    {
+      "name": "Brandon Klatsky",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5105530"
+    },
+    {
+      "name": "Dylan James",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "4895794"
+    },
+    {
+      "name": "Jackson McVey",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5144145"
+    },
+    {
+      "name": "Jaden Newell",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5105532"
+    },
+    {
+      "name": "Jake Wilkins",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5142622"
+    },
+    {
+      "name": "Jeremiah Wilkinson",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5165276"
+    },
+    {
+      "name": "Jordan Ross",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "4711402"
+    },
+    {
+      "name": "Justin Abson",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5238204"
+    },
+    {
+      "name": "Justin Bailey",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5107490"
+    },
+    {
+      "name": "Kanon Catchings",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5243212"
+    },
+    {
+      "name": "Kareem Stagg",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5144153"
+    },
+    {
+      "name": "Marcus Millender",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5176681"
+    },
+    {
+      "name": "Markel Jennings",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5174664"
+    },
+    {
+      "name": "Somtochukwu Cyril",
+      "team": "Georgia",
+      "teamId": "61",
+      "id": "5238203"
+    },
+    {
+      "name": "Adam Miller",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "4432175"
+    },
+    {
+      "name": "Alonzo Metz",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5313011"
+    },
+    {
+      "name": "Braden Huff",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "4894445"
+    },
+    {
+      "name": "Braeden Smith",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5105672"
+    },
+    {
+      "name": "Cade Orness",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5240584"
+    },
+    {
+      "name": "Davis Fogle",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5196913"
+    },
+    {
+      "name": "Emmanuel Innocenti",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5176787"
+    },
+    {
+      "name": "Graham Ike",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "4703396"
+    },
+    {
+      "name": "Ismaila Diagne",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5240587"
+    },
+    {
+      "name": "Jalen Warley",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "4683147"
+    },
+    {
+      "name": "Joaquim ArauzMoore",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5176259"
+    },
+    {
+      "name": "Mario Saint-Supery",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5313012"
+    },
+    {
+      "name": "Noah Haaland",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5240588"
+    },
+    {
+      "name": "Parker Jefferson",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "5313013"
+    },
+    {
+      "name": "Steele Venters",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "4592579"
+    },
+    {
+      "name": "Tyon Grant-Foster",
+      "team": "Gonzaga",
+      "teamId": "2250",
+      "id": "4700527"
+    },
+    {
+      "name": "Aaron Hunkin-Claytor",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5241898"
+    },
+    {
+      "name": "AJ Economou",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5241895"
+    },
+    {
+      "name": "Dre Bullock",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5106877"
+    },
+    {
+      "name": "Gytis Nemeiksa",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5175369"
+    },
+    {
+      "name": "Harry Rouhliadeff",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5107204"
+    },
+    {
+      "name": "Hunter Carter",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5254318"
+    },
+    {
+      "name": "Hunter Erickson",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "4701217"
+    },
+    {
+      "name": "Isaac Finlinson",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5105472"
+    },
+    {
+      "name": "Isaac Johnson",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "4898118"
+    },
+    {
+      "name": "Isaiah Kerr",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5107841"
+    },
+    {
+      "name": "Jalen Myers",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5107607"
+    },
+    {
+      "name": "Tanner Cuff",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "5177731"
+    },
+    {
+      "name": "Yacine Toumi",
+      "team": "Hawai'i",
+      "teamId": "62",
+      "id": "4702598"
+    },
+    {
+      "name": "Babacar Diallo",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "4711705"
+    },
+    {
+      "name": "Birgir Irving",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5241595"
+    },
+    {
+      "name": "Braden Hausen",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5241592"
+    },
+    {
+      "name": "Caden Miller",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5313503"
+    },
+    {
+      "name": "Cam'Ron Fletcher",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "4432182"
+    },
+    {
+      "name": "Chase Johnston",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "4612709"
+    },
+    {
+      "name": "Conrad Martinez",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5174957"
+    },
+    {
+      "name": "David Fonville",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5241591"
+    },
+    {
+      "name": "Dorian Grosber",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5313504"
+    },
+    {
+      "name": "Josh Ibukunoluwa",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5241594"
+    },
+    {
+      "name": "Kasen Krueger",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5313505"
+    },
+    {
+      "name": "Liam Carney",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5108710"
+    },
+    {
+      "name": "Mavrick Miller",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5241597"
+    },
+    {
+      "name": "Owen Aquino",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5242131"
+    },
+    {
+      "name": "Rob Martin",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5107904"
+    },
+    {
+      "name": "Scotty Washington",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "4896852"
+    },
+    {
+      "name": "Terry Anderson",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5241590"
+    },
+    {
+      "name": "Vincent Brady II",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5106755"
+    },
+    {
+      "name": "Youssouf Singare",
+      "team": "High Point",
+      "teamId": "2272",
+      "id": "5102797"
+    },
+    {
+      "name": "A.J. Wills",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5176061"
+    },
+    {
+      "name": "Alex Tsynkevich",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5177536"
+    },
+    {
+      "name": "Amir Williams",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5239633"
+    },
+    {
+      "name": "Biggie Patterson",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5241495"
+    },
+    {
+      "name": "Brandon Morgan",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5243267"
+    },
+    {
+      "name": "Carlos Lopez",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5177285"
+    },
+    {
+      "name": "Cruz Davis",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5107198"
+    },
+    {
+      "name": "German Plotnikov",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5105719"
+    },
+    {
+      "name": "Jaeden Roberts",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5312164"
+    },
+    {
+      "name": "Joshua Aaron Reaves",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "4703169"
+    },
+    {
+      "name": "Joshua DeCady",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5239632"
+    },
+    {
+      "name": "Preston Edmead",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5236222"
+    },
+    {
+      "name": "Silas Sunday",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "4684984"
+    },
+    {
+      "name": "Trey Boyd III",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5312162"
+    },
+    {
+      "name": "Victory Onuetu",
+      "team": "Hofstra",
+      "teamId": "2275",
+      "id": "5312163"
+    },
+    {
+      "name": "Bryce Jackson",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5144098"
+    },
+    {
+      "name": "Cedric Lath",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5117524"
+    },
+    {
+      "name": "Chase McCarty",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5101660"
+    },
+    {
+      "name": "Chris Cenac Jr.",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5142621"
+    },
+    {
+      "name": "Emanuel Sharp",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5106058"
+    },
+    {
+      "name": "Isiah Harwell",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5041942"
+    },
+    {
+      "name": "Jacob McFarland",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5095062"
+    },
+    {
+      "name": "Joseph Tugler",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5060700"
+    },
+    {
+      "name": "Kalifa Sakho",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5176274"
+    },
+    {
+      "name": "Kingston Flemings",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5149077"
+    },
+    {
+      "name": "Kordel Jefferson",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5070506"
+    },
+    {
+      "name": "Mercy Miller",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "4873086"
+    },
+    {
+      "name": "Milos Uzan",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "5106272"
+    },
+    {
+      "name": "Ramon Walker Jr.",
+      "team": "Houston",
+      "teamId": "248",
+      "id": "4708176"
+    },
+    {
+      "name": "Alex Cotton",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5175065"
+    },
+    {
+      "name": "BJ Powell",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316214"
+    },
+    {
+      "name": "Bryce Harris",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "4897768"
+    },
+    {
+      "name": "Calvin Robins Jr.",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5250600"
+    },
+    {
+      "name": "Cam Gillus",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5176075"
+    },
+    {
+      "name": "Cedric Taylor III",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5192142"
+    },
+    {
+      "name": "Danas Kazakevicius",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316219"
+    },
+    {
+      "name": "Ed Holland III",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "4898226"
+    },
+    {
+      "name": "Isaiah Brown",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5243100"
+    },
+    {
+      "name": "Jeremiah Johnson",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316218"
+    },
+    {
+      "name": "Julian Johnson",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316216"
+    },
+    {
+      "name": "Ose Okojie",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5107986"
+    },
+    {
+      "name": "River Smith",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316217"
+    },
+    {
+      "name": "Shane Frazier",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316215"
+    },
+    {
+      "name": "Stefan Isailovic",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316213"
+    },
+    {
+      "name": "Travelle Bryson",
+      "team": "Howard",
+      "teamId": "47",
+      "id": "5316220"
+    },
+    {
+      "name": "Aidan Sevilla",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "4902201"
+    },
+    {
+      "name": "Biko Johnson",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5177021"
+    },
+    {
+      "name": "Brody Rowbury",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5108917"
+    },
+    {
+      "name": "Ewan Steele",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5241270"
+    },
+    {
+      "name": "Isaiah Brickner",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5107768"
+    },
+    {
+      "name": "Jack Payne",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5107563"
+    },
+    {
+      "name": "Jackson Rasmussen",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5237588"
+    },
+    {
+      "name": "Kolton Mitchell",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5176318"
+    },
+    {
+      "name": "Kristian Gonzalez",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5176303"
+    },
+    {
+      "name": "Miles Klapper",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5176305"
+    },
+    {
+      "name": "Seth Joba",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5174853"
+    },
+    {
+      "name": "Talon Jenkins",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5313161"
+    },
+    {
+      "name": "Titus Yearout",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5107820"
+    },
+    {
+      "name": "Trevon Blassingame",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5106590"
+    },
+    {
+      "name": "Tyler Linhardt",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5105650"
+    },
+    {
+      "name": "Will Jenson",
+      "team": "Idaho",
+      "teamId": "70",
+      "id": "5313162"
+    },
+    {
+      "name": "AJ Redd",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5121952"
+    },
+    {
+      "name": "Andrej Stojakovic",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5175007"
+    },
+    {
+      "name": "Ben Humrichous",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5177736"
+    },
+    {
+      "name": "Blake Fagbemi",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5311834"
+    },
+    {
+      "name": "Brandon Lee",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5311833"
+    },
+    {
+      "name": "David Mirkovic",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5311832"
+    },
+    {
+      "name": "Jake Davis",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5176150"
+    },
+    {
+      "name": "Jason Jakstys",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5173645"
+    },
+    {
+      "name": "Keaton Wagler",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5254165"
+    },
+    {
+      "name": "Kylan Boswell",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "4684269"
+    },
+    {
+      "name": "Mihailo Petrovic",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5311835"
+    },
+    {
+      "name": "Tomislav Ivisic",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5214642"
+    },
+    {
+      "name": "Ty Rodgers",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5105792"
+    },
+    {
+      "name": "Zvonimir Ivisic",
+      "team": "Illinois",
+      "teamId": "356",
+      "id": "5174665"
+    },
+    {
+      "name": "Alvaro Folgueiras",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5177211"
+    },
+    {
+      "name": "Bennett Stirtz",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5241364"
+    },
+    {
+      "name": "Brendan Hausen",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5105589"
+    },
+    {
+      "name": "Cam Manyawu",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5176283"
+    },
+    {
+      "name": "Cooper Koch",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "4873203"
+    },
+    {
+      "name": "Isaia Howard",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5241366"
+    },
+    {
+      "name": "Jacob Koch",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5239551"
+    },
+    {
+      "name": "Joey Matteoni",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5241367"
+    },
+    {
+      "name": "Kael Combs",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5176280"
+    },
+    {
+      "name": "Peyton McCollum",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5311840"
+    },
+    {
+      "name": "Tate Sage",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5311842"
+    },
+    {
+      "name": "Tavion Banks",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5241363"
+    },
+    {
+      "name": "Trevin Jirak",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5311843"
+    },
+    {
+      "name": "Trey Thompson",
+      "team": "Iowa",
+      "teamId": "2294",
+      "id": "5311841"
+    },
+    {
+      "name": "Anthony Rise",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5311915"
+    },
+    {
+      "name": "Blake Buchanan",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5079838"
+    },
+    {
+      "name": "Cade Kelderman",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5175036"
+    },
+    {
+      "name": "Dominick Nelson",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5241380"
+    },
+    {
+      "name": "Dominykas Pleta",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5281369"
+    },
+    {
+      "name": "Eric Mulder",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5106790"
+    },
+    {
+      "name": "Jamarion Batemon",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5217196"
+    },
+    {
+      "name": "Joshua Jefferson",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "4870564"
+    },
+    {
+      "name": "Killyan Toure",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5248302"
+    },
+    {
+      "name": "Mason Williams",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5175370"
+    },
+    {
+      "name": "Milan Momcilovic",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "4848637"
+    },
+    {
+      "name": "Nate Heise",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "4703912"
+    },
+    {
+      "name": "Tamin Lipsey",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5106254"
+    },
+    {
+      "name": "Xzavion Mitchell",
+      "team": "Iowa State",
+      "teamId": "66",
+      "id": "5101856"
+    },
+    {
+      "name": "Bryson Tiller",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5041958"
+    },
+    {
+      "name": "Corbin Allen",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5311917"
+    },
+    {
+      "name": "Darryn Peterson",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5041955"
+    },
+    {
+      "name": "Elmarko Jackson",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "4872739"
+    },
+    {
+      "name": "Flory Bidunga",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5044426"
+    },
+    {
+      "name": "Jamari McDowell",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5103571"
+    },
+    {
+      "name": "Jayden Dawson",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5105964"
+    },
+    {
+      "name": "Justin Cross",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5175889"
+    },
+    {
+      "name": "Kohl Rosario",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5291864"
+    },
+    {
+      "name": "Melvin Council Jr.",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5177301"
+    },
+    {
+      "name": "Nginyu Ngala",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5311916"
+    },
+    {
+      "name": "Paul Mbiya",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5281379"
+    },
+    {
+      "name": "Samis Calderon",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5252599"
+    },
+    {
+      "name": "Tre White",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5105643"
+    },
+    {
+      "name": "Wilder Evers",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5106260"
+    },
+    {
+      "name": "Will Thengvall",
+      "team": "Kansas",
+      "teamId": "2305",
+      "id": "5240262"
+    },
+    {
+      "name": "Amir Taylor",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5312348"
+    },
+    {
+      "name": "Braedan Lue",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5242126"
+    },
+    {
+      "name": "Brendan Tousignaut",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5312349"
+    },
+    {
+      "name": "Charles Stone",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5106664"
+    },
+    {
+      "name": "Chase Clemmons",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "4894459"
+    },
+    {
+      "name": "Darius Washington III",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5312344"
+    },
+    {
+      "name": "Davin Cosby Jr.",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5132733"
+    },
+    {
+      "name": "Dozie Onyirimba",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5242128"
+    },
+    {
+      "name": "Eric Holland",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5106665"
+    },
+    {
+      "name": "Frankquon Sherman",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5176187"
+    },
+    {
+      "name": "Jaden Harris",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5176770"
+    },
+    {
+      "name": "Jamil Miller",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5242125"
+    },
+    {
+      "name": "Kaden Rickard",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5312345"
+    },
+    {
+      "name": "Nigel Thomas",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5312346"
+    },
+    {
+      "name": "Perry Smith Jr.",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5107296"
+    },
+    {
+      "name": "Ramone Seals",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5101667"
+    },
+    {
+      "name": "RJ Johnson",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5176186"
+    },
+    {
+      "name": "Simeon Cottle",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5106660"
+    },
+    {
+      "name": "Trey Simpson",
+      "team": "Kennesaw St",
+      "teamId": "338",
+      "id": "5312350"
+    },
+    {
+      "name": "Andrija Jelavic",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5281347"
+    },
+    {
+      "name": "Brandon Garrison",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "4711306"
+    },
+    {
+      "name": "Braydon Hawthorne",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5101820"
+    },
+    {
+      "name": "Collin Chandler",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5238207"
+    },
+    {
+      "name": "Denzel Aberdeen",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5105527"
+    },
+    {
+      "name": "Jaland Lowe",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "4684270"
+    },
+    {
+      "name": "Jasper Johnson",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5095153"
+    },
+    {
+      "name": "Jayden Quaintance",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5101845"
+    },
+    {
+      "name": "Kam Williams",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "4873183"
+    },
+    {
+      "name": "Malachi Moreno",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5101849"
+    },
+    {
+      "name": "Mouhamed Dioubate",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "4895780"
+    },
+    {
+      "name": "Otega Oweh",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5106270"
+    },
+    {
+      "name": "Reece Potter",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5176217"
+    },
+    {
+      "name": "Trent Noah",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5175592"
+    },
+    {
+      "name": "Walker Horn",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5105283"
+    },
+    {
+      "name": "Zach Tow",
+      "team": "Kentucky",
+      "teamId": "96",
+      "id": "5252266"
+    },
+    {
+      "name": "Alfredo Addesa",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5243040"
+    },
+    {
+      "name": "Andrew Urosevic",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5314503"
+    },
+    {
+      "name": "Brendan Reed",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5105682"
+    },
+    {
+      "name": "Bube Momah",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5105683"
+    },
+    {
+      "name": "Caesar Burrows",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5314504"
+    },
+    {
+      "name": "Caleb Thomas",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5314505"
+    },
+    {
+      "name": "Edouard Benoit",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5243039"
+    },
+    {
+      "name": "Hank Alvey",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5243042"
+    },
+    {
+      "name": "Henri Adiassa",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5105684"
+    },
+    {
+      "name": "Jake Pike",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5176078"
+    },
+    {
+      "name": "Jalen Vazquez",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5314506"
+    },
+    {
+      "name": "Joshua Ingram",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5176077"
+    },
+    {
+      "name": "Nasir Whitlock",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5176076"
+    },
+    {
+      "name": "Peter Kramer",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5243041"
+    },
+    {
+      "name": "Tommy Conniff",
+      "team": "Lehigh",
+      "teamId": "2329",
+      "id": "5105685"
+    },
+    {
+      "name": "A.J. Neal Jr.",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "4897671"
+    },
+    {
+      "name": "Caleb Johnson",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5175939"
+    },
+    {
+      "name": "Eddie Munyak",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5243274"
+    },
+    {
+      "name": "Faheim Meran",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5109771"
+    },
+    {
+      "name": "Gavin Pendergast",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5243275"
+    },
+    {
+      "name": "Greg Gordon",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5177096"
+    },
+    {
+      "name": "Isaiah Miranda",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5121428"
+    },
+    {
+      "name": "Jamal Fuller",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5122836"
+    },
+    {
+      "name": "Jomo Goings",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5314163"
+    },
+    {
+      "name": "Malachi Davis",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5175029"
+    },
+    {
+      "name": "Mason Porter-Brown",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5314165"
+    },
+    {
+      "name": "Max Ndlovu-Fraser",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5314164"
+    },
+    {
+      "name": "Shadrak Lasu",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5243273"
+    },
+    {
+      "name": "Tre'shawn Sheppard",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5177262"
+    },
+    {
+      "name": "Xinyi Li",
+      "team": "Long Island",
+      "teamId": "112358",
+      "id": "5181768"
+    },
+    {
+      "name": "Adrian Wooley",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5242127"
+    },
+    {
+      "name": "Aly Khalifa",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "4702739"
+    },
+    {
+      "name": "Cole Sherman",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5106779"
+    },
+    {
+      "name": "Isaac McKneely",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "4712845"
+    },
+    {
+      "name": "J'Vonne Hadley",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "4702784"
+    },
+    {
+      "name": "Kasean Pryor",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "4589481"
+    },
+    {
+      "name": "Khani Rooths",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "4873187"
+    },
+    {
+      "name": "Kobe Rodgers",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5174946"
+    },
+    {
+      "name": "London Johnson",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5104203"
+    },
+    {
+      "name": "Mikel Brown Jr.",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5101761"
+    },
+    {
+      "name": "Mouhamed Camara",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5311966"
+    },
+    {
+      "name": "Ryan Conwell",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5107157"
+    },
+    {
+      "name": "Sananda Fru",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5311967"
+    },
+    {
+      "name": "Spencer Legg",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5105765"
+    },
+    {
+      "name": "Vangelis Zougris",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5311969"
+    },
+    {
+      "name": "Will Hanke",
+      "team": "Louisville",
+      "teamId": "97",
+      "id": "5311968"
+    },
+    {
+      "name": "Abdou Akim Mazou Tahirou",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5313570"
+    },
+    {
+      "name": "Carl Cherenfant",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "4711271"
+    },
+    {
+      "name": "DJ Richards Jr.",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5106843"
+    },
+    {
+      "name": "Erik Villarreal",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5242577"
+    },
+    {
+      "name": "Garwey Dual",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5077373"
+    },
+    {
+      "name": "Jacolb Fredson-Cole",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5238222"
+    },
+    {
+      "name": "Javohn Garcia",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "4701125"
+    },
+    {
+      "name": "Jerrell Colbert",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "4433273"
+    },
+    {
+      "name": "JJ Rembert",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5186554"
+    },
+    {
+      "name": "Kaleb Brewer",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5313568"
+    },
+    {
+      "name": "Larry Johnson",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5144375"
+    },
+    {
+      "name": "Peitok Machar",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5313569"
+    },
+    {
+      "name": "T'Johnn Brown",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "4845366"
+    },
+    {
+      "name": "Tyshawn Archie",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5175726"
+    },
+    {
+      "name": "Yanis Ndjonga",
+      "team": "McNeese",
+      "teamId": "2377",
+      "id": "5175027"
+    },
+    {
+      "name": "Dante Allen",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5142709"
+    },
+    {
+      "name": "Ernest Udeh Jr.",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5106261"
+    },
+    {
+      "name": "John Laboy II",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5311985"
+    },
+    {
+      "name": "Jordyn Kee",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5214525"
+    },
+    {
+      "name": "Malik Reneau",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5105798"
+    },
+    {
+      "name": "Marcus Allen",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "4869762"
+    },
+    {
+      "name": "Noam Dovrat",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5311986"
+    },
+    {
+      "name": "Salih Altuntas",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5311984"
+    },
+    {
+      "name": "Shelton Henderson",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5101809"
+    },
+    {
+      "name": "Timotej Malovec",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5281366"
+    },
+    {
+      "name": "Tre Donaldson",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "4837356"
+    },
+    {
+      "name": "Treyvon Maddox",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "5101821"
+    },
+    {
+      "name": "Tru Washington",
+      "team": "Miami",
+      "teamId": "2390",
+      "id": "4845368"
+    },
+    {
+      "name": "Almar Atlason",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5176313"
+    },
+    {
+      "name": "Antwone Woolfolk",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5105859"
+    },
+    {
+      "name": "Blake Anderson",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5176216"
+    },
+    {
+      "name": "Brady Ganley",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5313369"
+    },
+    {
+      "name": "Brant Byers",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5243053"
+    },
+    {
+      "name": "Eian Elmer",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5093252"
+    },
+    {
+      "name": "Eli Yofan",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5108031"
+    },
+    {
+      "name": "Ethan Wright",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5243054"
+    },
+    {
+      "name": "Evan Ipsaro",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5176212"
+    },
+    {
+      "name": "Jackson Kotecki",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5176215"
+    },
+    {
+      "name": "Justin Kirby",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5313370"
+    },
+    {
+      "name": "Kyle Waltz",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5313373"
+    },
+    {
+      "name": "Leshawn Stowers",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5313372"
+    },
+    {
+      "name": "Luke Skaljac",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5101653"
+    },
+    {
+      "name": "Peter Suder",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5106674"
+    },
+    {
+      "name": "Trey Perry",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5313368"
+    },
+    {
+      "name": "Tyler Robbins",
+      "team": "Miami OH",
+      "teamId": "193",
+      "id": "5313371"
+    },
+    {
+      "name": "Aday Mara",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5174983"
+    },
+    {
+      "name": "Charlie May",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5106648"
+    },
+    {
+      "name": "Elliot Cadeau",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "4869764"
+    },
+    {
+      "name": "Harrison Hochberg",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5174787"
+    },
+    {
+      "name": "Howard Eisley Jr.",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5239559"
+    },
+    {
+      "name": "L.J. Cason",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5214641"
+    },
+    {
+      "name": "Malick Kordel",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5311988"
+    },
+    {
+      "name": "Morez Johnson Jr.",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "4873153"
+    },
+    {
+      "name": "Nimari Burnett",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "4433138"
+    },
+    {
+      "name": "Oscar Goodman",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5244505"
+    },
+    {
+      "name": "Ricky Liburd",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5311987"
+    },
+    {
+      "name": "Roddy Gayle Jr.",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5105836"
+    },
+    {
+      "name": "Trey McKenney",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5041954"
+    },
+    {
+      "name": "Will Tschetter",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "4684596"
+    },
+    {
+      "name": "Winters Grady",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5174808"
+    },
+    {
+      "name": "Yaxel Lendeborg",
+      "team": "Michigan",
+      "teamId": "130",
+      "id": "5175737"
+    },
+    {
+      "name": "Brennan Walton",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5239563"
+    },
+    {
+      "name": "Cam Ward",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5101798"
+    },
+    {
+      "name": "Carson Cooper",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5105817"
+    },
+    {
+      "name": "Coen Carr",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "4872740"
+    },
+    {
+      "name": "Colin Walton",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5239564"
+    },
+    {
+      "name": "Denham Wojcik",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "4610138"
+    },
+    {
+      "name": "Divine Ugochukwu",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5060733"
+    },
+    {
+      "name": "Jaxon Kohler",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5105815"
+    },
+    {
+      "name": "Jeremy Fears Jr.",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "4711255"
+    },
+    {
+      "name": "Jesse McCulloch",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5239562"
+    },
+    {
+      "name": "Jordan Scott",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5196931"
+    },
+    {
+      "name": "Kaleb Glenn",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "4685668"
+    },
+    {
+      "name": "Kur Teng",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "4873111"
+    },
+    {
+      "name": "Nick Sanders",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "5105818"
+    },
+    {
+      "name": "Trey Fort",
+      "team": "Michigan St",
+      "teamId": "127",
+      "id": "4703411"
+    },
+    {
+      "name": "Aaron Rowe",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5041957"
+    },
+    {
+      "name": "Annor Boateng",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5238218"
+    },
+    {
+      "name": "Anthony Robinson II",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5054085"
+    },
+    {
+      "name": "Jacob Crews",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "4432515"
+    },
+    {
+      "name": "Jayden Stone",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "4432196"
+    },
+    {
+      "name": "Jevon Porter",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "4684798"
+    },
+    {
+      "name": "Luke Northweather",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5106269"
+    },
+    {
+      "name": "Mark Mitchell",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "4433285"
+    },
+    {
+      "name": "Nicholas Randall",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5144151"
+    },
+    {
+      "name": "Sebastian Mack",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "4711270"
+    },
+    {
+      "name": "Shawn Phillips Jr.",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5105537"
+    },
+    {
+      "name": "T.O. Barrett",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5144166"
+    },
+    {
+      "name": "Trent Burns",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5169569"
+    },
+    {
+      "name": "Trent Pierce",
+      "team": "Missouri",
+      "teamId": "142",
+      "id": "5037881"
+    },
+    {
+      "name": "Andy Stefonowicz",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5241640"
+    },
+    {
+      "name": "Caleb Schoenrock",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5314782"
+    },
+    {
+      "name": "Carson Smith",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5241641"
+    },
+    {
+      "name": "Damari Wheeler-Thomas",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5107273"
+    },
+    {
+      "name": "Dom Clay",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5314781"
+    },
+    {
+      "name": "Emil Skytta",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5108046"
+    },
+    {
+      "name": "Markhi Strickland",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "4432494"
+    },
+    {
+      "name": "Max Majerle",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5108047"
+    },
+    {
+      "name": "Noah Feddersen",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5107278"
+    },
+    {
+      "name": "Riley Massey",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5314779"
+    },
+    {
+      "name": "Riley Saunders",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5314780"
+    },
+    {
+      "name": "Tay Smith",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "4901166"
+    },
+    {
+      "name": "Trevian Carson",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5314778"
+    },
+    {
+      "name": "Treyson Anderson",
+      "team": "N Dakota St",
+      "teamId": "2449",
+      "id": "5241642"
+    },
+    {
+      "name": "Alyn Breed",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "4585590"
+    },
+    {
+      "name": "Colt Langdon",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5142707"
+    },
+    {
+      "name": "Darrion Williams",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "4937074"
+    },
+    {
+      "name": "Jayme Kontuniemi",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5311994"
+    },
+    {
+      "name": "Jerry Deng",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5174958"
+    },
+    {
+      "name": "Jordan Snell",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5105430"
+    },
+    {
+      "name": "Matt Able",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5196877"
+    },
+    {
+      "name": "Musa Sagnia",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5311995"
+    },
+    {
+      "name": "Paul McNeil Jr.",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "4873151"
+    },
+    {
+      "name": "Quadir Copeland",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "4683860"
+    },
+    {
+      "name": "Scottie Ebube",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "4897482"
+    },
+    {
+      "name": "Terrance Arceneaux",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5106059"
+    },
+    {
+      "name": "Tre Holloman",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5105816"
+    },
+    {
+      "name": "Ven-Allen Lubin",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "4684799"
+    },
+    {
+      "name": "Zymicah Wilkins",
+      "team": "NC State",
+      "teamId": "152",
+      "id": "5101858"
+    },
+    {
+      "name": "Berke Buyuktuncel",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5174982"
+    },
+    {
+      "name": "Braden Frager",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5239571"
+    },
+    {
+      "name": "Cale Jacobsen",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5105827"
+    },
+    {
+      "name": "Connor Essegian",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5105861"
+    },
+    {
+      "name": "Henry Burt",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5105828"
+    },
+    {
+      "name": "Jamarques Lawrence",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5105825"
+    },
+    {
+      "name": "Jared Garcia",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "4702740"
+    },
+    {
+      "name": "Justin Bolis",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5239573"
+    },
+    {
+      "name": "Kendall Blue",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5109018"
+    },
+    {
+      "name": "Leo Curtis",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5263670"
+    },
+    {
+      "name": "Pryce Sandfort",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "4858604"
+    },
+    {
+      "name": "Quentin Rhymes",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5254162"
+    },
+    {
+      "name": "Rienk Mast",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "4592677"
+    },
+    {
+      "name": "Sam Hoiberg",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "4897432"
+    },
+    {
+      "name": "Ugnius Jarusevicius",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5108721"
+    },
+    {
+      "name": "Will Cooper",
+      "team": "Nebraska",
+      "teamId": "158",
+      "id": "5248172"
+    },
+    {
+      "name": "Caleb Wilson",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5095151"
+    },
+    {
+      "name": "Derek Dixon",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5144097"
+    },
+    {
+      "name": "Elijah Davis",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5116699"
+    },
+    {
+      "name": "Evan Smith",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5312013"
+    },
+    {
+      "name": "Henri Veesaar",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5105571"
+    },
+    {
+      "name": "Isaiah Denis",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5217193"
+    },
+    {
+      "name": "Ivan Matlekovic",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5241596"
+    },
+    {
+      "name": "James Brown",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "4869763"
+    },
+    {
+      "name": "Jarin Stevenson",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "4873181"
+    },
+    {
+      "name": "Jaydon Young",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "4711266"
+    },
+    {
+      "name": "John Holbrook",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5238173"
+    },
+    {
+      "name": "Jonathan Powell",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5101669"
+    },
+    {
+      "name": "Kyan Evans",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5093253"
+    },
+    {
+      "name": "Luka Bogavac",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "5312014"
+    },
+    {
+      "name": "Seth Trimble",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "4712836"
+    },
+    {
+      "name": "Zayden High",
+      "team": "North Carolina",
+      "teamId": "153",
+      "id": "4895793"
+    },
+    {
+      "name": "Ben Schwieger",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "4897474"
+    },
+    {
+      "name": "Cade Courbat",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5241410"
+    },
+    {
+      "name": "Chase Courbat",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "4897480"
+    },
+    {
+      "name": "Geon Hutchins",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5315804"
+    },
+    {
+      "name": "Hunter Jacobson",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5107889"
+    },
+    {
+      "name": "Ismael Diouf",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5238171"
+    },
+    {
+      "name": "Jalen Wilson",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5144119"
+    },
+    {
+      "name": "Kyle Pock",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5176385"
+    },
+    {
+      "name": "Leon Bond III",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "4838704"
+    },
+    {
+      "name": "Levi Valdo",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5315805"
+    },
+    {
+      "name": "Marino Dubravcic",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5239492"
+    },
+    {
+      "name": "Max Weisbrod",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5241408"
+    },
+    {
+      "name": "Redek Born",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5241407"
+    },
+    {
+      "name": "RJ Taylor",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5176384"
+    },
+    {
+      "name": "Trey Campbell",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5107887"
+    },
+    {
+      "name": "Tristan Smith",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5315806"
+    },
+    {
+      "name": "Will Hornseth",
+      "team": "Northern Iowa",
+      "teamId": "2460",
+      "id": "5241409"
+    },
+    {
+      "name": "Amare Bynum",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5196946"
+    },
+    {
+      "name": "Brandon Noel",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "4702994"
+    },
+    {
+      "name": "Braylen Nash",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5239598"
+    },
+    {
+      "name": "Bruce Thornton",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5105837"
+    },
+    {
+      "name": "Christoph Tilly",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5109790"
+    },
+    {
+      "name": "Colin White",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5101675"
+    },
+    {
+      "name": "Devin Royal",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "4895776"
+    },
+    {
+      "name": "Gabe Cupps",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "4845387"
+    },
+    {
+      "name": "Ivan Njegovan",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5239599"
+    },
+    {
+      "name": "John Mobley Jr.",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5060708"
+    },
+    {
+      "name": "Josh Ojianwuna",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "4894236"
+    },
+    {
+      "name": "Mathieu Grujicic",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5290629"
+    },
+    {
+      "name": "Myles Herro",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "5290626"
+    },
+    {
+      "name": "Puff Johnson",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "4701846"
+    },
+    {
+      "name": "Taison Chatman",
+      "team": "Ohio State",
+      "teamId": "194",
+      "id": "4685646"
+    },
+    {
+      "name": "AJ Levine",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5241732"
+    },
+    {
+      "name": "Alex Massung",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5241733"
+    },
+    {
+      "name": "Augustus Gerhart",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5182415"
+    },
+    {
+      "name": "Bradyn Foster",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5241735"
+    },
+    {
+      "name": "Cam Thrower",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5107164"
+    },
+    {
+      "name": "Chris Ubochi",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5107165"
+    },
+    {
+      "name": "Dalton Scantlebury",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5314646"
+    },
+    {
+      "name": "Dylan Williams",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5241734"
+    },
+    {
+      "name": "Ethan Roberts",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5108811"
+    },
+    {
+      "name": "Jay Jones",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5314644"
+    },
+    {
+      "name": "Johnnie Walter",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5108098"
+    },
+    {
+      "name": "Lucas Lueth",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5314648"
+    },
+    {
+      "name": "Michael Zanoni",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5108877"
+    },
+    {
+      "name": "Michelangelo Oberti",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5241736"
+    },
+    {
+      "name": "Niklas Polonowski",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5182416"
+    },
+    {
+      "name": "Payton Kamin",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5314647"
+    },
+    {
+      "name": "Ryan Altman",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5314645"
+    },
+    {
+      "name": "TJ Power",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "4684843"
+    },
+    {
+      "name": "William Kruse",
+      "team": "Penn",
+      "teamId": "219",
+      "id": "5314649"
+    },
+    {
+      "name": "Corey Dunning",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "4904924"
+    },
+    {
+      "name": "Cory Wells",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "4904928"
+    },
+    {
+      "name": "Dontae Horne",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5176727"
+    },
+    {
+      "name": "Doug Young",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5177138"
+    },
+    {
+      "name": "Elijah Mitchell",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5314805"
+    },
+    {
+      "name": "Hassane Diallo",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5190922"
+    },
+    {
+      "name": "Isaiah Foster",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5243361"
+    },
+    {
+      "name": "Jannoy Thomas",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5314804"
+    },
+    {
+      "name": "Joey Madimba",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "4705371"
+    },
+    {
+      "name": "Keeshawn Mason",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5247621"
+    },
+    {
+      "name": "Lance Williams",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "4904931"
+    },
+    {
+      "name": "Marcel Bryant",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5177019"
+    },
+    {
+      "name": "Ryan Bolton Jr.",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5176729"
+    },
+    {
+      "name": "Seryee Lewis",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "5243098"
+    },
+    {
+      "name": "Tai'Reon Joseph",
+      "team": "Prairie View",
+      "teamId": "2504",
+      "id": "4703215"
+    },
+    {
+      "name": "Aaron Fine",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5239503"
+    },
+    {
+      "name": "Antione West Jr",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5144111"
+    },
+    {
+      "name": "Braden Smith",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5105854"
+    },
+    {
+      "name": "C.J. Cox",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5175591"
+    },
+    {
+      "name": "Daniel Jacobsen",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5144147"
+    },
+    {
+      "name": "Fletcher Loyer",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5105853"
+    },
+    {
+      "name": "Gicarri Harris",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5101658"
+    },
+    {
+      "name": "Jace Rayl",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5174804"
+    },
+    {
+      "name": "Jack Benter",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5102618"
+    },
+    {
+      "name": "Jack Lusk",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5239504"
+    },
+    {
+      "name": "Liam Murphy",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "4702975"
+    },
+    {
+      "name": "Omer Mayer",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5312035"
+    },
+    {
+      "name": "Oscar Cluff",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5174973"
+    },
+    {
+      "name": "Raleigh Burgess",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5061582"
+    },
+    {
+      "name": "Sam King",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "5105856"
+    },
+    {
+      "name": "Trey Kaufman-Renn",
+      "team": "Purdue",
+      "teamId": "2509",
+      "id": "4897438"
+    },
+    {
+      "name": "Avantae Parker",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5176801"
+    },
+    {
+      "name": "Carson Schwieger",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5177217"
+    },
+    {
+      "name": "Chris Ashby",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5107088"
+    },
+    {
+      "name": "Colby Christiansen",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5240008"
+    },
+    {
+      "name": "Danzelle Bullock Coles",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314489"
+    },
+    {
+      "name": "Gus Larson",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "4898223"
+    },
+    {
+      "name": "Isaiah Henry",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5196932"
+    },
+    {
+      "name": "Jacob Brandly",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5240007"
+    },
+    {
+      "name": "Jimma James",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314492"
+    },
+    {
+      "name": "Jordan Watford",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5144110"
+    },
+    {
+      "name": "Kam Clark",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314491"
+    },
+    {
+      "name": "Maban Jabriel",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5240005"
+    },
+    {
+      "name": "Matthew Walter",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314496"
+    },
+    {
+      "name": "Nasir Mann",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5176643"
+    },
+    {
+      "name": "Reid Celestin",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314490"
+    },
+    {
+      "name": "Saif-Allah Zatari",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314494"
+    },
+    {
+      "name": "Seamus Wilson",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314495"
+    },
+    {
+      "name": "Tyler Crider",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5314493"
+    },
+    {
+      "name": "Yoav Berman",
+      "team": "Queens",
+      "teamId": "2511",
+      "id": "5240006"
+    },
+    {
+      "name": "Amari McCottry",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5239707"
+    },
+    {
+      "name": "Badara Diakite",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5311879"
+    },
+    {
+      "name": "Brady Dunlap",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "4685659"
+    },
+    {
+      "name": "Cam Hutson",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5254323"
+    },
+    {
+      "name": "Dion Brown",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5107242"
+    },
+    {
+      "name": "Dylan Warlick",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5061579"
+    },
+    {
+      "name": "Isaac Holmes",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5107907"
+    },
+    {
+      "name": "Ishan Sharma",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5183809"
+    },
+    {
+      "name": "Jaden Schertz",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5107905"
+    },
+    {
+      "name": "Jax Kerr",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5236225"
+    },
+    {
+      "name": "Kalu Anya",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5106205"
+    },
+    {
+      "name": "Kellen Thames",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5105980"
+    },
+    {
+      "name": "Luke Laczkowski",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5254324"
+    },
+    {
+      "name": "Paul Otieno",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5107797"
+    },
+    {
+      "name": "Quentin Jones",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "5175171"
+    },
+    {
+      "name": "Robbie Avila",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "4917097"
+    },
+    {
+      "name": "Trey Green",
+      "team": "Saint Louis",
+      "teamId": "139",
+      "id": "4711258"
+    },
+    {
+      "name": "Andrew McKeever",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5176481"
+    },
+    {
+      "name": "Cade Bennett",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5105419"
+    },
+    {
+      "name": "Dillan Shaw",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5313031"
+    },
+    {
+      "name": "Harry Wessels",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5105418"
+    },
+    {
+      "name": "Jazz Gardner",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "4685682"
+    },
+    {
+      "name": "Joshua Dent",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5183875"
+    },
+    {
+      "name": "Kevin Gad",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5105421"
+    },
+    {
+      "name": "Liam Campbell",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5101655"
+    },
+    {
+      "name": "Mantas Juzenas",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5313030"
+    },
+    {
+      "name": "Mikey Lewis",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5240980"
+    },
+    {
+      "name": "Oliver Faubert",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5240981"
+    },
+    {
+      "name": "Paulius Murauskas",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5174955"
+    },
+    {
+      "name": "Rory Hawke",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5123978"
+    },
+    {
+      "name": "Tony Duckett",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5241001"
+    },
+    {
+      "name": "Trent MacLean",
+      "team": "Saint Mary's",
+      "teamId": "2608",
+      "id": "5313032"
+    },
+    {
+      "name": "Allen Graves",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5149115"
+    },
+    {
+      "name": "Brad Longcor III",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5313100"
+    },
+    {
+      "name": "Brendan Yarusso",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5109791"
+    },
+    {
+      "name": "Brenton Knapper",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "4897209"
+    },
+    {
+      "name": "Bukky Oboye",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5176361"
+    },
+    {
+      "name": "Chris Tadjo",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5183810"
+    },
+    {
+      "name": "Christian Hammond",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5176359"
+    },
+    {
+      "name": "Elijah Mahi",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5241069"
+    },
+    {
+      "name": "Francis Chukwudebelu",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5041940"
+    },
+    {
+      "name": "Gehrig Normand",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5086370"
+    },
+    {
+      "name": "Jake Ensminger",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5109789"
+    },
+    {
+      "name": "Juan Reyna",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "4897872"
+    },
+    {
+      "name": "KJ Cochran",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5196879"
+    },
+    {
+      "name": "Malachi Douyon",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5109788"
+    },
+    {
+      "name": "Noah Badibanga",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5313101"
+    },
+    {
+      "name": "Sash Gavalyugov",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5215425"
+    },
+    {
+      "name": "Thierry Darlan",
+      "team": "Santa Clara",
+      "teamId": "2541",
+      "id": "5147928"
+    },
+    {
+      "name": "Antonio Chandler",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5314192"
+    },
+    {
+      "name": "Brendan Coyle",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5107811"
+    },
+    {
+      "name": "Chris Torres",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5242923"
+    },
+    {
+      "name": "Christian Jones",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5314193"
+    },
+    {
+      "name": "Cooper Nadler",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5242929"
+    },
+    {
+      "name": "Danny Murray",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5314196"
+    },
+    {
+      "name": "Francis Folefac",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5314195"
+    },
+    {
+      "name": "Gavin Doty",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5242926"
+    },
+    {
+      "name": "Isaiah Henderson",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5314191"
+    },
+    {
+      "name": "Justice Shoats",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5242922"
+    },
+    {
+      "name": "Marcus Jackson",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5106044"
+    },
+    {
+      "name": "Mosi Clayton",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5177164"
+    },
+    {
+      "name": "Owen Schlager",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5314194"
+    },
+    {
+      "name": "Reid Ducharme",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "4685660"
+    },
+    {
+      "name": "Riley Mulvey",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "4685004"
+    },
+    {
+      "name": "Tajae Jones",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5242925"
+    },
+    {
+      "name": "Tasman Goodrick",
+      "team": "Siena",
+      "teamId": "2561",
+      "id": "5178209"
+    },
+    {
+      "name": "B.J. Davis-Ray",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5041938"
+    },
+    {
+      "name": "B.J. Edwards",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5105552"
+    },
+    {
+      "name": "Billy White III",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5280896"
+    },
+    {
+      "name": "Boopie Miller",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "4898283"
+    },
+    {
+      "name": "Chance Puryear",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5144391"
+    },
+    {
+      "name": "Corey Washington",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5110039"
+    },
+    {
+      "name": "Jaden Toombs",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5101840"
+    },
+    {
+      "name": "Jaron Pierre Jr.",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "4703115"
+    },
+    {
+      "name": "Jermaine O'Neal Jr.",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5312289"
+    },
+    {
+      "name": "Mitchell Holmes",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5238182"
+    },
+    {
+      "name": "Niccolo Kalischer-Stork",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5238183"
+    },
+    {
+      "name": "Nigel Walls",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5101828"
+    },
+    {
+      "name": "Sam Walters",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "4683781"
+    },
+    {
+      "name": "Samet Yigitoglu",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5238184"
+    },
+    {
+      "name": "Trey Utter",
+      "team": "SMU",
+      "teamId": "2567",
+      "id": "5106638"
+    },
+    {
+      "name": "Adriel Nyorha",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5313563"
+    },
+    {
+      "name": "Caleb Sanders",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5313561"
+    },
+    {
+      "name": "CJ Brown",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5183925"
+    },
+    {
+      "name": "Daimion Collins",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "4611412"
+    },
+    {
+      "name": "De'Ante Green",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "4684795"
+    },
+    {
+      "name": "Devin Haid",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5241694"
+    },
+    {
+      "name": "Gavin Hightower",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5101765"
+    },
+    {
+      "name": "Isaiah Jones",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "4067423"
+    },
+    {
+      "name": "Izaiyah Nelson",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5107251"
+    },
+    {
+      "name": "Joseph Pinion",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "4699760"
+    },
+    {
+      "name": "Josh Omojafo",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5241690"
+    },
+    {
+      "name": "Onyx Nnani",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5196957"
+    },
+    {
+      "name": "Tristan Beckford",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5313562"
+    },
+    {
+      "name": "Wes Enis",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5313560"
+    },
+    {
+      "name": "Xavier Brown",
+      "team": "South Florida",
+      "teamId": "58",
+      "id": "5107222"
+    },
+    {
+      "name": "Bryce Hopkins",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "4565698"
+    },
+    {
+      "name": "Casper Pohto",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5312301"
+    },
+    {
+      "name": "Dillon Mitchell",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5106283"
+    },
+    {
+      "name": "Dylan Darling",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5105658"
+    },
+    {
+      "name": "Fotis Konstantinidis",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5312302"
+    },
+    {
+      "name": "Handje Tamba",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "4896480"
+    },
+    {
+      "name": "Ian Jackson",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "4869770"
+    },
+    {
+      "name": "Imran Suljanovic",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5312303"
+    },
+    {
+      "name": "Joson Sanon",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5142625"
+    },
+    {
+      "name": "Kelvin Odih",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5226072"
+    },
+    {
+      "name": "Lefteris Liotopoulos",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5145712"
+    },
+    {
+      "name": "Oziyah Sellers",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5105642"
+    },
+    {
+      "name": "Ruben Prey",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5240539"
+    },
+    {
+      "name": "Sadiku Ibine Ayo",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5107197"
+    },
+    {
+      "name": "Zuby Ejiofor",
+      "team": "St John's",
+      "teamId": "2599",
+      "id": "5106262"
+    },
+    {
+      "name": "Adam Stewart",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5240268"
+    },
+    {
+      "name": "Ashton Simmons",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5179086"
+    },
+    {
+      "name": "Brock Harding",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5103589"
+    },
+    {
+      "name": "David Punch",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5164368"
+    },
+    {
+      "name": "Drew McElroy",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5240269"
+    },
+    {
+      "name": "Jace Posey",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5101654"
+    },
+    {
+      "name": "Jayden Pierre",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5105619"
+    },
+    {
+      "name": "Kayden Edwards",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5101787"
+    },
+    {
+      "name": "Liutauras Lelevicius",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5245624"
+    },
+    {
+      "name": "Malick Diallo",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5061583"
+    },
+    {
+      "name": "Micah Robinson",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5037876"
+    },
+    {
+      "name": "RJ Jones",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5175042"
+    },
+    {
+      "name": "Tanner Toolson",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5105461"
+    },
+    {
+      "name": "Trey Stuart",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5106277"
+    },
+    {
+      "name": "Vianney Salatchoum",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5242117"
+    },
+    {
+      "name": "Xavier Edmonds",
+      "team": "TCU",
+      "teamId": "2628",
+      "id": "5311928"
+    },
+    {
+      "name": "Amaree Abram",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5105544"
+    },
+    {
+      "name": "Amari Evans",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5196914"
+    },
+    {
+      "name": "Bishop Boswell",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5101648"
+    },
+    {
+      "name": "Cade Phillips",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "4848640"
+    },
+    {
+      "name": "Campbell Duncan",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5238229"
+    },
+    {
+      "name": "Clarence Massamba",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5196942"
+    },
+    {
+      "name": "DeWayne Brown II",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5142710"
+    },
+    {
+      "name": "Ethan Burg",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5311527"
+    },
+    {
+      "name": "Felix Okpara",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5105841"
+    },
+    {
+      "name": "Gavin Paull",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5238228"
+    },
+    {
+      "name": "Grant Hurst",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "4897332"
+    },
+    {
+      "name": "J.P. Estrella",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5093142"
+    },
+    {
+      "name": "Ja'Kobi Gillespie",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5107968"
+    },
+    {
+      "name": "Jaylen Carey",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "4685687"
+    },
+    {
+      "name": "Nate Ament",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5164559"
+    },
+    {
+      "name": "Troy Henderson",
+      "team": "Tennessee",
+      "teamId": "2633",
+      "id": "5311526"
+    },
+    {
+      "name": "Aaron Nkrumah",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5182573"
+    },
+    {
+      "name": "Alex Garcia",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5106807"
+    },
+    {
+      "name": "Antoine Lorick III",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5242989"
+    },
+    {
+      "name": "Carlous Williams",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5175727"
+    },
+    {
+      "name": "Damon Howard Jr.",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5314352"
+    },
+    {
+      "name": "Dante Harris",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "4596531"
+    },
+    {
+      "name": "Jabrion Spikes",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5314353"
+    },
+    {
+      "name": "Jalen Pitre",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5105453"
+    },
+    {
+      "name": "Jayden Jones",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5314354"
+    },
+    {
+      "name": "JC Brooks",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5242986"
+    },
+    {
+      "name": "Jean Yvens Lafleur",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5314355"
+    },
+    {
+      "name": "Kavien Jones",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5242991"
+    },
+    {
+      "name": "Khalil London",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5105760"
+    },
+    {
+      "name": "Maddux Bodenhamer",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5242987"
+    },
+    {
+      "name": "Ogien Ayo",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5256521"
+    },
+    {
+      "name": "Travis Harper II",
+      "team": "Tennessee St",
+      "teamId": "2634",
+      "id": "5242985"
+    },
+    {
+      "name": "Anthon McDermott",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5191718"
+    },
+    {
+      "name": "Brandon Taylor",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5176687"
+    },
+    {
+      "name": "Camden Heide",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5105855"
+    },
+    {
+      "name": "Chendall Weaver",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5105486"
+    },
+    {
+      "name": "Cole Bott",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "4897760"
+    },
+    {
+      "name": "Dailyn Swain",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "4848625"
+    },
+    {
+      "name": "Declan Duru Jr.",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5311528"
+    },
+    {
+      "name": "John Clark",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5149079"
+    },
+    {
+      "name": "Jordan Pope",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5105624"
+    },
+    {
+      "name": "Lassina Traore",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "4897052"
+    },
+    {
+      "name": "Lewis Obiorah",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5311529"
+    },
+    {
+      "name": "Matas Vokietaitis",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5239838"
+    },
+    {
+      "name": "Nic Codie",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "5149083"
+    },
+    {
+      "name": "Simeon Wilcher",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "4683785"
+    },
+    {
+      "name": "Tramon Mark",
+      "team": "Texas",
+      "teamId": "251",
+      "id": "4432243"
+    },
+    {
+      "name": "Ali Dibba",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "4896862"
+    },
+    {
+      "name": "Chris McDermott",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5061578"
+    },
+    {
+      "name": "Federiko Federiko",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5105412"
+    },
+    {
+      "name": "Jacari Lane",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5107078"
+    },
+    {
+      "name": "Jamie Vinson",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5101692"
+    },
+    {
+      "name": "Jeremiah Green",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5041941"
+    },
+    {
+      "name": "Josh Holloway",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5176160"
+    },
+    {
+      "name": "Mackenzie Mgbako",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "4683779"
+    },
+    {
+      "name": "Marcus Hill",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5176153"
+    },
+    {
+      "name": "Noah Shelby",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "4823977"
+    },
+    {
+      "name": "Pop Isaacs",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5106285"
+    },
+    {
+      "name": "Rashaun Agee",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "4593815"
+    },
+    {
+      "name": "Rub\u00e9n Dominguez",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "5311530"
+    },
+    {
+      "name": "Rylan Griffen",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "4683682"
+    },
+    {
+      "name": "Zach Clemence",
+      "team": "Texas A&M",
+      "teamId": "245",
+      "id": "4683146"
+    },
+    {
+      "name": "Christian Anderson",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5060701"
+    },
+    {
+      "name": "Donovan Atwell",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5107355"
+    },
+    {
+      "name": "Jack Francis",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5175077"
+    },
+    {
+      "name": "Jaylen Petty",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5221321"
+    },
+    {
+      "name": "Jazz Henderson",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5240270"
+    },
+    {
+      "name": "Josiah Moseley",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5152656"
+    },
+    {
+      "name": "JT Toppin",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5143604"
+    },
+    {
+      "name": "LaTrell Hoover",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5311931"
+    },
+    {
+      "name": "LeJuan Watts",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5107312"
+    },
+    {
+      "name": "Leon Horner",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5240271"
+    },
+    {
+      "name": "Luke Bamgboye",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5061581"
+    },
+    {
+      "name": "Marial Akuentok",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5311930"
+    },
+    {
+      "name": "Nolan Groves",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5311929"
+    },
+    {
+      "name": "Tyeree Bryan",
+      "team": "Texas Tech",
+      "teamId": "2641",
+      "id": "5108120"
+    },
+    {
+      "name": "Austin Cross",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5240749"
+    },
+    {
+      "name": "Cobi Campbell",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5240746"
+    },
+    {
+      "name": "Cooper Campbell",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5240745"
+    },
+    {
+      "name": "Corbin Green",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5113386"
+    },
+    {
+      "name": "Emmanuel Clarton",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5313364"
+    },
+    {
+      "name": "Evan Griffin",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5240748"
+    },
+    {
+      "name": "Hikaru Awata",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5313367"
+    },
+    {
+      "name": "Javen Colbert",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5313365"
+    },
+    {
+      "name": "Javier Gilgeous-Glasgow",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5313366"
+    },
+    {
+      "name": "Jerrell Bellamy",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5176735"
+    },
+    {
+      "name": "Kameryn Mitchell",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5176738"
+    },
+    {
+      "name": "Kerrington Kiel",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5176731"
+    },
+    {
+      "name": "Theo Seng",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "4897957"
+    },
+    {
+      "name": "Thomas Dowd",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5176732"
+    },
+    {
+      "name": "Victor Valdes",
+      "team": "Troy",
+      "teamId": "2653",
+      "id": "5176736"
+    },
+    {
+      "name": "Carmelo Pacheco",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5242634"
+    },
+    {
+      "name": "Chris Johnson",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5175069"
+    },
+    {
+      "name": "Devan Cambridge",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "4567588"
+    },
+    {
+      "name": "Elijah Hulsewe",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5108850"
+    },
+    {
+      "name": "George Beale Jr.",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5107975"
+    },
+    {
+      "name": "Jamichael Stillwell",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5241667"
+    },
+    {
+      "name": "Jeremy Foumena",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5105970"
+    },
+    {
+      "name": "John Bol",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "4915060"
+    },
+    {
+      "name": "Jordan Burks",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5060684"
+    },
+    {
+      "name": "Kris Parker",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "4848623"
+    },
+    {
+      "name": "Poohpha Warakulnukroh",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5106645"
+    },
+    {
+      "name": "Riley Kugel",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5105529"
+    },
+    {
+      "name": "Tanner Jones",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5311933"
+    },
+    {
+      "name": "Themus Fulks",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "4704078"
+    },
+    {
+      "name": "Zach Johnson",
+      "team": "UCF",
+      "teamId": "2116",
+      "id": "5311932"
+    },
+    {
+      "name": "Anthony Peoples Jr.",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5243402"
+    },
+    {
+      "name": "Brandon Williams",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5174981"
+    },
+    {
+      "name": "Christian Horry",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5239622"
+    },
+    {
+      "name": "Donovan Dent",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5107782"
+    },
+    {
+      "name": "Eric Dailey Jr.",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "4610012"
+    },
+    {
+      "name": "Eric Freeny",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5149633"
+    },
+    {
+      "name": "Evan Manjikian",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5105639"
+    },
+    {
+      "name": "Jack Seidler",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5105640"
+    },
+    {
+      "name": "Jamar Brown",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5177743"
+    },
+    {
+      "name": "Markell Alston",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5312038"
+    },
+    {
+      "name": "Skyy Clark",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5105794"
+    },
+    {
+      "name": "Steven Jamerson II",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5105417"
+    },
+    {
+      "name": "Trent Perry",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5060706"
+    },
+    {
+      "name": "Tyler Bilodeau",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "5105626"
+    },
+    {
+      "name": "Xavier Booker",
+      "team": "UCLA",
+      "teamId": "26",
+      "id": "4711304"
+    },
+    {
+      "name": "Alec Millender",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5241657"
+    },
+    {
+      "name": "Alex Karaban",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "4917149"
+    },
+    {
+      "name": "Braylon Mullins",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5196916"
+    },
+    {
+      "name": "Dwayne Koroma",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "4703011"
+    },
+    {
+      "name": "Eric Reibe",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5152763"
+    },
+    {
+      "name": "Jacob Furphy",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5248294"
+    },
+    {
+      "name": "Jacob Ross",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5142624"
+    },
+    {
+      "name": "Jayden Ross",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "4895753"
+    },
+    {
+      "name": "Jaylin Stewart",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "4685647"
+    },
+    {
+      "name": "Malachi Smith",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "4683861"
+    },
+    {
+      "name": "Rrezon Elezaj",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5312036"
+    },
+    {
+      "name": "Silas Demary Jr.",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5054083"
+    },
+    {
+      "name": "Solo Ball",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "4895737"
+    },
+    {
+      "name": "Tarris Reed Jr.",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5105809"
+    },
+    {
+      "name": "Uro\u0161 Paunovic",
+      "team": "UConn",
+      "teamId": "41",
+      "id": "5307570"
+    },
+    {
+      "name": "Ace Valentine",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5174860"
+    },
+    {
+      "name": "Caden Diggs",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5196866"
+    },
+    {
+      "name": "Cougar Downing",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5177355"
+    },
+    {
+      "name": "Daylon Dickerson",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5239816"
+    },
+    {
+      "name": "Devin Ceaser",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "4888718"
+    },
+    {
+      "name": "DJ Armstrong Jr.",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5252505"
+    },
+    {
+      "name": "Jah'Likai King",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5313186"
+    },
+    {
+      "name": "Jake Stout",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5239818"
+    },
+    {
+      "name": "Jose Roberto Tanchyn",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5182581"
+    },
+    {
+      "name": "Josh Odunowo",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "4702976"
+    },
+    {
+      "name": "Paul Greene",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5313187"
+    },
+    {
+      "name": "Regimantas Ciunys",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5107238"
+    },
+    {
+      "name": "Riley Jacobs",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5313189"
+    },
+    {
+      "name": "Saahil Thakkar",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5313190"
+    },
+    {
+      "name": "Tim Eze",
+      "team": "UMBC",
+      "teamId": "2378",
+      "id": "5239817"
+    },
+    {
+      "name": "Adlan Elamin",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5195079"
+    },
+    {
+      "name": "Brayden Boe",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5144136"
+    },
+    {
+      "name": "David Iweze",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5255259"
+    },
+    {
+      "name": "Drake Allen",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5105494"
+    },
+    {
+      "name": "Elijah Perryman",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5255260"
+    },
+    {
+      "name": "Garry Clark",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5108973"
+    },
+    {
+      "name": "Jordy Barnes",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5241264"
+    },
+    {
+      "name": "Karson Templin",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5176273"
+    },
+    {
+      "name": "Kingston Tosi",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5152734"
+    },
+    {
+      "name": "Kolby King",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5105604"
+    },
+    {
+      "name": "Luke Kearney",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5182081"
+    },
+    {
+      "name": "Mason Falslev",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5107864"
+    },
+    {
+      "name": "MJ Collins Jr.",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5105401"
+    },
+    {
+      "name": "Tucker Anderson",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "5175860"
+    },
+    {
+      "name": "Zach Keller",
+      "team": "Utah State",
+      "teamId": "328",
+      "id": "4896363"
+    },
+    {
+      "name": "AK Okereke",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5114350"
+    },
+    {
+      "name": "Chandler Bing",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5311759"
+    },
+    {
+      "name": "Coleson Messer",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5174287"
+    },
+    {
+      "name": "Devin McGlockton",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "4791227"
+    },
+    {
+      "name": "Duke Miles",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "4702049"
+    },
+    {
+      "name": "Frankie Collins",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "4433616"
+    },
+    {
+      "name": "George Kimble III",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5239784"
+    },
+    {
+      "name": "Jalen Washington",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "4433625"
+    },
+    {
+      "name": "Jayden Leverett",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5254169"
+    },
+    {
+      "name": "Jaylon Dean-Vines",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5221327"
+    },
+    {
+      "name": "Mason Nicholson",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5106670"
+    },
+    {
+      "name": "Mike James",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "4684164"
+    },
+    {
+      "name": "Miles Keeffe",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5105281"
+    },
+    {
+      "name": "Tyler Harris",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5176497"
+    },
+    {
+      "name": "Tyler Nickel",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "4838721"
+    },
+    {
+      "name": "Tyler Tanner",
+      "team": "Vanderbilt",
+      "teamId": "238",
+      "id": "5187600"
+    },
+    {
+      "name": "Ahmad Nowell",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "4869778"
+    },
+    {
+      "name": "Barry Evans",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5105987"
+    },
+    {
+      "name": "Brandon Jennings",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5239713"
+    },
+    {
+      "name": "Christian Fermin",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5106041"
+    },
+    {
+      "name": "Jadrian Tracey",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "4701030"
+    },
+    {
+      "name": "Jordan Tillery",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5311892"
+    },
+    {
+      "name": "Jordann Dumont",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5117584"
+    },
+    {
+      "name": "Keyshawn Mitchell",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5174851"
+    },
+    {
+      "name": "Lazar Djokovic",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5175368"
+    },
+    {
+      "name": "Michael Belle",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5174672"
+    },
+    {
+      "name": "Nyk Lewis",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5311890"
+    },
+    {
+      "name": "Obinnaya Okafor",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5106042"
+    },
+    {
+      "name": "Terrence Hill Jr.",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "5060712"
+    },
+    {
+      "name": "Tyrell Ward",
+      "team": "VCU",
+      "teamId": "2670",
+      "id": "4684733"
+    },
+    {
+      "name": "Acaden Lewis",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5144105"
+    },
+    {
+      "name": "Braden Pierce",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5142360"
+    },
+    {
+      "name": "Bryce Lindsay",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5174291"
+    },
+    {
+      "name": "Chris Jeffrey",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5221332"
+    },
+    {
+      "name": "Devin Askew",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "4702467"
+    },
+    {
+      "name": "Duke Brennan",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "4870569"
+    },
+    {
+      "name": "Malachi Palmer",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5239554"
+    },
+    {
+      "name": "Malcolm Flaggs",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5105576"
+    },
+    {
+      "name": "Matt Hodge",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5175588"
+    },
+    {
+      "name": "Nico Onyekwere",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5281374"
+    },
+    {
+      "name": "Tafara Gapare",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5106034"
+    },
+    {
+      "name": "Tyler Perkins",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5182412"
+    },
+    {
+      "name": "Wade Chiddick",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5240540"
+    },
+    {
+      "name": "Zion Stanford",
+      "team": "Villanova",
+      "teamId": "222",
+      "id": "5175067"
+    },
+    {
+      "name": "Carter Lang",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "4894460"
+    },
+    {
+      "name": "Chance Mallory",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5150404"
+    },
+    {
+      "name": "Dallin Hall",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5105464"
+    },
+    {
+      "name": "Desmond Roberts",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5174572"
+    },
+    {
+      "name": "Devin Tillis",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "4703393"
+    },
+    {
+      "name": "Elijah Gertrude",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5080790"
+    },
+    {
+      "name": "Jacari White",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5107274"
+    },
+    {
+      "name": "Johann Grunloh",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5311844"
+    },
+    {
+      "name": "Malik Thomas",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "4683758"
+    },
+    {
+      "name": "Martin Carrere",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5239714"
+    },
+    {
+      "name": "Owen Odom",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5311845"
+    },
+    {
+      "name": "Sam Lewis",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5176232"
+    },
+    {
+      "name": "Silas Barksdale",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5144157"
+    },
+    {
+      "name": "Thijs De Ridder",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5311846"
+    },
+    {
+      "name": "Ugonna Onyenso",
+      "team": "Virginia",
+      "teamId": "258",
+      "id": "5037878"
+    },
+    {
+      "name": "Aleksas Bieliauskas",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5312048"
+    },
+    {
+      "name": "Andrew Rohde",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5109019"
+    },
+    {
+      "name": "Austin Rapp",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5240971"
+    },
+    {
+      "name": "Braeden Carrington",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5105820"
+    },
+    {
+      "name": "Elijah Gray",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5105894"
+    },
+    {
+      "name": "Hayden Jones",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5252600"
+    },
+    {
+      "name": "Isaac Gard",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5105863"
+    },
+    {
+      "name": "Jack Janicki",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5174807"
+    },
+    {
+      "name": "Jack Robison",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5110430"
+    },
+    {
+      "name": "John Blackwell",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5103630"
+    },
+    {
+      "name": "Nick Boyd",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "4702654"
+    },
+    {
+      "name": "Nolan Winter",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "4895783"
+    },
+    {
+      "name": "Riccardo Greppi",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5239655"
+    },
+    {
+      "name": "Will Garlock",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5215270"
+    },
+    {
+      "name": "Zach Kinziger",
+      "team": "Wisconsin",
+      "teamId": "275",
+      "id": "5144103"
+    },
+    {
+      "name": "Alex Bruskotter",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5241699"
+    },
+    {
+      "name": "Andrea Holden",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5241700"
+    },
+    {
+      "name": "Ayden Davis",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5241701"
+    },
+    {
+      "name": "Bryan Etumnu",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5106602"
+    },
+    {
+      "name": "Dominic Pangonis",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5243109"
+    },
+    {
+      "name": "Isaiah Williams",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5314629"
+    },
+    {
+      "name": "Kellen Pickett",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5314627"
+    },
+    {
+      "name": "Logan Woods",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5106806"
+    },
+    {
+      "name": "Michael Cooper",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5314630"
+    },
+    {
+      "name": "Michael Imariagbe",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "4707481"
+    },
+    {
+      "name": "PJ Douglas",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5314628"
+    },
+    {
+      "name": "Sam Alamutu",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "4898006"
+    },
+    {
+      "name": "Solomon Callaghan",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5177215"
+    },
+    {
+      "name": "TJ Burch",
+      "team": "Wright St",
+      "teamId": "2750",
+      "id": "5241483"
+    }
+  ]
+}
