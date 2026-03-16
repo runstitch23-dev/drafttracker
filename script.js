@@ -483,6 +483,12 @@ function refreshDatalist() {
   }
 
   el.playersDatalist.innerHTML = "";
+
+  // Keep drafted players searchable after selection.
+  state.picks.forEach((pick) => {
+    addOption(pick.player, pick.teamName || "");
+  });
+
   state.rankings.forEach((player) => {
     addOption(player.name, player.team);
   });
