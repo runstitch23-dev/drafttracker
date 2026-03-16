@@ -148,15 +148,20 @@ function getStorageKey() {
 }
 
 async function apiRequest(url, options = {}) {
-  const response = await fetch(url, {
-    method: options.method || "GET",
-    headers: {
-      "Content-Type": "application/json",
-      ...(options.headers || {})
-    },
-    credentials: "same-origin",
-    body: options.body ? JSON.stringify(options.body) : undefined
-  });
+  let response;
+  try {
+    response = await fetch(url, {
+      method: options.method || "GET",
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {})
+      },
+      credentials: "same-origin",
+      body: options.body ? JSON.stringify(options.body) : undefined
+    });
+  } catch {
+    throw new Error("Cannot reach backend API. Start with npm start and open http://localhost:3000 or http://localhost:3001.");
+  }
 
   if (!response.ok) {
     let message = `Request failed (${response.status})`;

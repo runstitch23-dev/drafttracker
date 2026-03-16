@@ -164,7 +164,7 @@ app.post("/api/auth/create-team", (req, res) => {
 
   const db = readDb();
   if (db.users.some((user) => user.email === email)) {
-    res.status(409).json({ error: "Email already in use." });
+    res.status(409).json({ error: "Email already in use. Log in with this email or use a different one." });
     return;
   }
 
@@ -214,7 +214,7 @@ app.post("/api/auth/join-team", (req, res) => {
 
   const db = readDb();
   if (db.users.some((user) => user.email === email)) {
-    res.status(409).json({ error: "Email already in use." });
+    res.status(409).json({ error: "Email already in use. Log in with this email or use a different one." });
     return;
   }
 
