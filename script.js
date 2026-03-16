@@ -117,11 +117,20 @@ function isRegionToken(value) {
 }
 
 function getRegionForTeam(teamName) {
-  const key = normalizeTeamKey(teamName || "");
-  if (!key) {
+  const rawKey = normalizeTeamKey(teamName || "");
+  if (!rawKey) {
     return "";
   }
-  return state.teamRegions[key] || defaultTeamRegions[key] || "";
+  const canonicalTeamName = resolveTeamName(teamName || "");
+  const canonicalKey = normalizeTeamKey(canonicalTeamName);
+
+  return (
+    state.teamRegions[rawKey] ||
+    state.teamRegions[canonicalKey] ||
+    defaultTeamRegions[rawKey] ||
+    defaultTeamRegions[canonicalKey] ||
+    ""
+  );
 }
 
 const teamAliasMap = new Map();
@@ -925,8 +934,8 @@ function suggestRegionFromPlayerInput() {
   const parsed = parsePlayerInput(raw);
   const ranking = findRankingByName(parsed.name);
   const rosterPlayer = findTournamentPlayer(parsed.name, parsed.teamHint || (ranking ? ranking.team : ""));
-  const teamName = ranking ? ranking.team : rosterPlayer ? rosterPlayer.team || "" : parsed.teamHint;
-  const region = getRegionForTeam(teamName);
+  const candidateTeams = [rosterPlayer ? rosterPlayer.team || "" : "", ranking ? ranking.team : "", parsed.teamHint];
+  const region = candidateTeams.map((teamName) => getRegionForTeam(teamName)).find(Boolean) || "";
   if (region) {
     el.pickRegionInput.value = region;
   }
@@ -966,13 +975,13 @@ function onAddPick({ autoBest = false } = {}) {
   const ranking = findRankingByName(parsed.name);
   const rosterPlayer = findTournamentPlayer(parsed.name, parsed.teamHint || (ranking ? ranking.team : ""));
   const resolvedName = ranking ? ranking.name : rosterPlayer ? rosterPlayer.name : parsed.name;
-  const resolvedTeamName = ranking
-    ? ranking.team
-    : rosterPlayer
-      ? rosterPlayer.team || ""
-      : parsed.teamHint;
+  const teamCandidates = [rosterPlayer ? rosterPlayer.team || "" : "", ranking ? ranking.team : "", parsed.teamHint];
+  const resolvedTeamName =
+    teamCandidates
+      .map((teamName) => resolveTeamName(teamName))
+      .find(Boolean) || "";
   const manualRegion = canonicalizeRegion(el.pickRegionInput.value);
-  const mappedRegion = getRegionForTeam(resolvedTeamName);
+  const mappedRegion = teamCandidates.map((teamName) => getRegionForTeam(teamName)).find(Boolean) || getRegionForTeam(resolvedTeamName);
   const resolvedRegion = manualRegion || mappedRegion || "";
 
   const draftedSet = getDraftedSet();
