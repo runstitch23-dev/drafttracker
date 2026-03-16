@@ -1,5 +1,4 @@
 const STORAGE_KEY = "mm_draft_tracker_v1";
-const SYNC_DEBOUNCE_MS = 350;
 
 const state = {
   teams: 15,
@@ -15,44 +14,7 @@ const state = {
   currentPick: 1
 };
 
-const auth = {
-  user: null,
-  team: null,
-  socket: null,
-  apiBase: "",
-  activeSection: "login",
-  applyingRemoteState: false,
-  saveTimer: null
-};
-
 const el = {
-  authGate: document.getElementById("authGate"),
-  appRoot: document.getElementById("appRoot"),
-  toggleLoginBtn: document.getElementById("toggleLoginBtn"),
-  toggleCreateBtn: document.getElementById("toggleCreateBtn"),
-  toggleJoinBtn: document.getElementById("toggleJoinBtn"),
-  loginToggleIcon: document.getElementById("loginToggleIcon"),
-  createToggleIcon: document.getElementById("createToggleIcon"),
-  joinToggleIcon: document.getElementById("joinToggleIcon"),
-  loginAuthContent: document.getElementById("loginAuthContent"),
-  createAuthContent: document.getElementById("createAuthContent"),
-  joinAuthContent: document.getElementById("joinAuthContent"),
-  loginForm: document.getElementById("loginForm"),
-  createForm: document.getElementById("createForm"),
-  joinForm: document.getElementById("joinForm"),
-  loginEmailInput: document.getElementById("loginEmailInput"),
-  loginPasswordInput: document.getElementById("loginPasswordInput"),
-  createNameInput: document.getElementById("createNameInput"),
-  createEmailInput: document.getElementById("createEmailInput"),
-  createPasswordInput: document.getElementById("createPasswordInput"),
-  createTeamNameInput: document.getElementById("createTeamNameInput"),
-  joinNameInput: document.getElementById("joinNameInput"),
-  joinEmailInput: document.getElementById("joinEmailInput"),
-  joinPasswordInput: document.getElementById("joinPasswordInput"),
-  joinCodeInput: document.getElementById("joinCodeInput"),
-  authStatus: document.getElementById("authStatus"),
-  sessionInfo: document.getElementById("sessionInfo"),
-  logoutBtn: document.getElementById("logoutBtn"),
   toggleSetupBtn: document.getElementById("toggleSetupBtn"),
   toggleSetupIcon: document.getElementById("toggleSetupIcon"),
   setupContent: document.getElementById("setupContent"),
@@ -253,133 +215,7 @@ function getTeamColor(teamSlot) {
 }
 
 function getStorageKey() {
-  if (auth.team?.id) {
-    return `${STORAGE_KEY}_${auth.team.id}`;
-  }
   return STORAGE_KEY;
-}
-
-function getApiCandidates() {
-  const candidates = [];
-  const currentOrigin = window.location.origin;
-  const defaults = [currentOrigin, "http://localhost:3001", "http://127.0.0.1:3001", "http://localhost:3000", "http://127.0.0.1:3000"];
-
-  defaults.forEach((origin) => {
-    if (!candidates.includes(origin)) {
-      candidates.push(origin);
-    }
-  });
-
-  return candidates;
-}
-
-async function apiRequest(url, options = {}) {
-  const path = String(url || "");
-  const candidates = auth.apiBase ? [auth.apiBase] : getApiCandidates();
-  let lastError = null;
-
-  for (const base of candidates) {
-    const fullUrl = path.startsWith("http") ? path : `${base}${path}`;
-    let response;
-    try {
-      response = await fetch(fullUrl, {
-        method: options.method || "GET",
-        headers: {
-          "Content-Type": "application/json",
-          ...(options.headers || {})
-        },
-        credentials: "include",
-        body: options.body ? JSON.stringify(options.body) : undefined
-      });
-    } catch (error) {
-      lastError = error;
-      continue;
-    }
-
-    if (response.status === 404 && !auth.apiBase) {
-      lastError = new Error(`Not found on ${base}`);
-      continue;
-    }
-
-    if (!response.ok) {
-      let message = `Request failed (${response.status})`;
-      try {
-        const payload = await response.json();
-        if (payload?.error) {
-          message = payload.error;
-        }
-      } catch {
-        // ignore malformed payloads
-      }
-      throw new Error(message);
-    }
-
-    if (!auth.apiBase && !path.startsWith("http")) {
-      auth.apiBase = base;
-    }
-
-    if (response.status === 204) {
-      return null;
-    }
-
-    return response.json();
-  }
-
-  throw new Error("Cannot reach backend API. Start with npm start and open http://localhost:3000 or http://localhost:3001.");
-}
-
-function setAuthStatus(message, isError = false) {
-  el.authStatus.textContent = message;
-  el.authStatus.classList.toggle("error-text", Boolean(isError));
-}
-
-function showAuth(show) {
-  el.authGate.classList.toggle("hidden", !show);
-  el.appRoot.classList.toggle("hidden", show);
-}
-
-function renderAuthSections() {
-  const sections = [
-    {
-      key: "login",
-      button: el.toggleLoginBtn,
-      content: el.loginAuthContent,
-      icon: el.loginToggleIcon
-    },
-    {
-      key: "create",
-      button: el.toggleCreateBtn,
-      content: el.createAuthContent,
-      icon: el.createToggleIcon
-    },
-    {
-      key: "join",
-      button: el.toggleJoinBtn,
-      content: el.joinAuthContent,
-      icon: el.joinToggleIcon
-    }
-  ];
-
-  sections.forEach((section) => {
-    const isOpen = auth.activeSection === section.key;
-    section.content.hidden = !isOpen;
-    section.button.setAttribute("aria-expanded", String(isOpen));
-    section.icon.textContent = isOpen ? "−" : "+";
-  });
-}
-
-function setAuthSection(section) {
-  auth.activeSection = section;
-  renderAuthSections();
-  setAuthStatus("");
-}
-
-function renderSessionInfo() {
-  if (!auth.user || !auth.team) {
-    el.sessionInfo.textContent = "";
-    return;
-  }
-  el.sessionInfo.textContent = `Signed in as ${auth.user.name} | Team Workspace: ${auth.team.name} | Code: ${auth.team.code}`;
 }
 
 function pickToRound(pickNumber, teams) {
@@ -760,21 +596,8 @@ function applyStateSnapshot(snapshot) {
   ensureDraftTeamsLength(state.teams);
 }
 
-function scheduleServerSync() {
-  if (!auth.user || !auth.socket || !auth.socket.connected || auth.applyingRemoteState) {
-    return;
-  }
-  if (auth.saveTimer) {
-    clearTimeout(auth.saveTimer);
-  }
-  auth.saveTimer = setTimeout(() => {
-    auth.socket.emit("state:update", { state });
-  }, SYNC_DEBOUNCE_MS);
-}
-
 function persist() {
   localStorage.setItem(getStorageKey(), JSON.stringify(state));
-  scheduleServerSync();
 }
 
 function loadPersisted() {
@@ -1026,152 +849,6 @@ function setDraftMessage(text) {
   el.draftStatus.textContent = text;
 }
 
-function connectSocket() {
-  if (typeof window.io !== "function") {
-    setDraftMessage("Realtime sync unavailable: socket.io client not loaded.");
-    return;
-  }
-
-  if (auth.socket) {
-    auth.socket.disconnect();
-    auth.socket = null;
-  }
-
-  auth.socket = window.io();
-  auth.socket.on("connect", () => {
-    setDraftMessage(`Live sync connected for ${auth.team.name}.`);
-  });
-  auth.socket.on("state:sync", (payload) => {
-    if (!payload || typeof payload.state !== "object") {
-      return;
-    }
-    auth.applyingRemoteState = true;
-    applyStateSnapshot(payload.state);
-    updateAll();
-    auth.applyingRemoteState = false;
-    if (payload.updatedBy && payload.updatedBy !== auth.user?.name) {
-      setDraftMessage(`Live update received from ${payload.updatedBy}.`);
-    }
-  });
-  auth.socket.on("connect_error", () => {
-    setDraftMessage("Live sync temporarily disconnected.");
-  });
-}
-
-async function hydrateTeamState() {
-  const payload = await apiRequest("/api/state");
-  if (payload?.state && typeof payload.state === "object") {
-    applyStateSnapshot(payload.state);
-  }
-}
-
-async function completeAuth(authPayload) {
-  auth.user = authPayload.user;
-  auth.team = authPayload.team;
-
-  setAuthStatus("");
-  renderSessionInfo();
-  loadPersisted();
-  try {
-    await hydrateTeamState();
-  } catch (error) {
-    setDraftMessage(`Signed in, but failed to load shared state (${error.message}). Using local state.`);
-  }
-  connectSocket();
-  updateAll();
-  showAuth(false);
-}
-
-async function initializeAuth() {
-  try {
-    const payload = await apiRequest("/api/me");
-    await completeAuth(payload);
-  } catch {
-    showAuth(true);
-    renderAuthSections();
-  }
-}
-
-async function handleLoginSubmit(event) {
-  event.preventDefault();
-  setAuthStatus("Signing in...");
-  try {
-    const payload = await apiRequest("/api/auth/login", {
-      method: "POST",
-      body: {
-        email: el.loginEmailInput.value.trim(),
-        password: el.loginPasswordInput.value
-      }
-    });
-    await completeAuth(payload);
-  } catch (error) {
-    setAuthStatus(error.message, true);
-  }
-}
-
-async function handleCreateTeamSubmit(event) {
-  event.preventDefault();
-  setAuthStatus("Creating team workspace...");
-  try {
-    const payload = await apiRequest("/api/auth/create-team", {
-      method: "POST",
-      body: {
-        name: el.createNameInput.value.trim(),
-        email: el.createEmailInput.value.trim(),
-        password: el.createPasswordInput.value,
-        teamName: el.createTeamNameInput.value.trim()
-      }
-    });
-    await completeAuth(payload);
-    setDraftMessage(`Team created. Share code ${auth.team.code} with teammates.`);
-  } catch (error) {
-    setAuthStatus(error.message, true);
-  }
-}
-
-async function handleJoinTeamSubmit(event) {
-  event.preventDefault();
-  setAuthStatus("Joining team workspace...");
-  try {
-    const payload = await apiRequest("/api/auth/join-team", {
-      method: "POST",
-      body: {
-        name: el.joinNameInput.value.trim(),
-        email: el.joinEmailInput.value.trim(),
-        password: el.joinPasswordInput.value,
-        teamCode: el.joinCodeInput.value.trim().toUpperCase()
-      }
-    });
-    await completeAuth(payload);
-  } catch (error) {
-    setAuthStatus(error.message, true);
-  }
-}
-
-async function handleLogout() {
-  try {
-    await apiRequest("/api/auth/logout", { method: "POST" });
-  } catch {
-    // ignore logout request failures and clear local session anyway
-  }
-
-  if (auth.socket) {
-    auth.socket.disconnect();
-    auth.socket = null;
-  }
-  if (auth.saveTimer) {
-    clearTimeout(auth.saveTimer);
-  }
-
-  auth.user = null;
-  auth.team = null;
-  auth.saveTimer = null;
-  renderSessionInfo();
-  setAuthSection("login");
-  setAuthStatus("You have been logged out.");
-  showAuth(true);
-}
-
 function updateAll() {
   renderSetupPanel();
   renderRankingsPanel();
@@ -1366,14 +1043,6 @@ function onResetDraft() {
 }
 
 function attachEvents() {
-  el.toggleLoginBtn.addEventListener("click", () => setAuthSection("login"));
-  el.toggleCreateBtn.addEventListener("click", () => setAuthSection("create"));
-  el.toggleJoinBtn.addEventListener("click", () => setAuthSection("join"));
-  el.loginForm.addEventListener("submit", handleLoginSubmit);
-  el.createForm.addEventListener("submit", handleCreateTeamSubmit);
-  el.joinForm.addEventListener("submit", handleJoinTeamSubmit);
-  el.logoutBtn.addEventListener("click", handleLogout);
-
   el.toggleSetupBtn.addEventListener("click", () => {
     state.setupOpen = !state.setupOpen;
     updateAll();
@@ -1422,10 +1091,10 @@ function attachEvents() {
   el.undoPickBtn.addEventListener("click", onUndoPick);
 }
 
-async function bootstrap() {
+function bootstrap() {
   attachEvents();
-  setAuthSection("login");
-  await initializeAuth();
+  loadPersisted();
+  updateAll();
 }
 
 bootstrap();

@@ -7,101 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section id="authGate" class="auth-gate">
-    <div class="auth-card">
-      <h1>Team Draft Workspace</h1>
-      <p class="muted">Log in, create a team, or join a team to collaborate in real time.</p>
-
-      <div class="auth-actions">
-        <div class="auth-action-block">
-          <button id="toggleLoginBtn" type="button" class="panel-toggle auth-toggle" aria-expanded="true" aria-controls="loginAuthContent">
-            <span>Login</span>
-            <span id="loginToggleIcon" class="panel-toggle-icon">−</span>
-          </button>
-          <div id="loginAuthContent" class="auth-action-content">
-            <form id="loginForm" class="auth-form">
-              <label>
-                Email
-                <input id="loginEmailInput" type="email" autocomplete="email" required>
-              </label>
-              <label>
-                Password
-                <input id="loginPasswordInput" type="password" autocomplete="current-password" required>
-              </label>
-              <button type="submit">Login</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="auth-action-block">
-          <button id="toggleCreateBtn" type="button" class="panel-toggle auth-toggle" aria-expanded="false" aria-controls="createAuthContent">
-            <span>Create Team</span>
-            <span id="createToggleIcon" class="panel-toggle-icon">+</span>
-          </button>
-          <div id="createAuthContent" class="auth-action-content" hidden>
-            <form id="createForm" class="auth-form">
-              <label>
-                Your Name
-                <input id="createNameInput" type="text" required>
-              </label>
-              <label>
-                Email
-                <input id="createEmailInput" type="email" autocomplete="email" required>
-              </label>
-              <label>
-                Password (min 6 chars)
-                <input id="createPasswordInput" type="password" autocomplete="new-password" minlength="6" required>
-              </label>
-              <label>
-                Team Workspace Name
-                <input id="createTeamNameInput" type="text" placeholder="Example: RunStitch Draft Room" required>
-              </label>
-              <button type="submit">Create Team Workspace</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="auth-action-block">
-          <button id="toggleJoinBtn" type="button" class="panel-toggle auth-toggle" aria-expanded="false" aria-controls="joinAuthContent">
-            <span>Join Team</span>
-            <span id="joinToggleIcon" class="panel-toggle-icon">+</span>
-          </button>
-          <div id="joinAuthContent" class="auth-action-content" hidden>
-            <form id="joinForm" class="auth-form">
-              <label>
-                Your Name
-                <input id="joinNameInput" type="text" required>
-              </label>
-              <label>
-                Email
-                <input id="joinEmailInput" type="email" autocomplete="email" required>
-              </label>
-              <label>
-                Password (min 6 chars)
-                <input id="joinPasswordInput" type="password" autocomplete="new-password" minlength="6" required>
-              </label>
-              <label>
-                Team Code
-                <input id="joinCodeInput" type="text" placeholder="Example: A1B2C3" required>
-              </label>
-              <button type="submit">Join Team Workspace</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <p id="authStatus" class="muted"></p>
-    </div>
-  </section>
-
-  <main id="appRoot" class="app hidden">
+  <main id="appRoot" class="app">
     <header class="app-header">
       <h1>March Madness Draft Tracker</h1>
       <p>Track picks live, keep your roster updated, and monitor best available players.</p>
-      <div class="session-bar">
-        <p id="sessionInfo" class="session-info"></p>
-        <button id="logoutBtn" type="button" class="secondary">Log Out</button>
-      </div>
     </header>
 
     <section class="panel settings">
@@ -254,7 +163,6 @@ Florida: Thomas Haugh"></textarea>
     </section>
   </main>
 
-  <script src="/socket.io/socket.io.js"></script>
   <script src="tournamentPlayers.js"></script>
   <script src="teamRegions.js"></script>
   <script src="script.js"></script>
