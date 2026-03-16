@@ -277,6 +277,15 @@ function getPicksUntilMyTurn() {
   return nextPick - state.currentPick;
 }
 
+function isMyPick(pick) {
+  const pickTeam = Number(pick?.team);
+  const myTeam = Number(state.myTeam);
+  if (pickTeam && myTeam && pickTeam === myTeam) {
+    return true;
+  }
+  return Boolean(pick?.manualMine);
+}
+
 function parseRankingLine(rawLine) {
   const skipPatterns = [
     /already ranked/i,
@@ -719,7 +728,7 @@ function renderSummary() {
 }
 
 function renderRoster() {
-  const mine = state.picks.filter((p) => p.isMine);
+  const mine = state.picks.filter((p) => isMyPick(p));
   el.myRosterList.innerHTML = "";
   if (!mine.length) {
     const li = document.createElement("li");
@@ -799,7 +808,7 @@ function renderDraftLog() {
     const row = document.createElement("tr");
     row.className = "draft-log-row";
     row.style.setProperty("--team-color", teamColor);
-    if (pick.isMine) {
+    if (isMyPick(pick)) {
       row.classList.add("my-pick-row");
     }
     row.innerHTML = `
@@ -997,7 +1006,7 @@ function onAddPick({ autoBest = false } = {}) {
     player: resolvedName,
     teamName: resolvedTeamName || "",
     region: resolvedRegion,
-    isMine: Boolean(el.markMineInput.checked) || team === state.myTeam
+    manualMine: Boolean(el.markMineInput.checked) && team !== state.myTeam
   };
 
   if (resolvedTeamName && resolvedRegion) {
