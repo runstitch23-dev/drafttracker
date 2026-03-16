@@ -18,7 +18,7 @@ const auth = {
   user: null,
   team: null,
   socket: null,
-  activeTab: "login",
+  activeSection: "login",
   applyingRemoteState: false,
   saveTimer: null
 };
@@ -26,9 +26,15 @@ const auth = {
 const el = {
   authGate: document.getElementById("authGate"),
   appRoot: document.getElementById("appRoot"),
-  loginTabBtn: document.getElementById("loginTabBtn"),
-  createTabBtn: document.getElementById("createTabBtn"),
-  joinTabBtn: document.getElementById("joinTabBtn"),
+  toggleLoginBtn: document.getElementById("toggleLoginBtn"),
+  toggleCreateBtn: document.getElementById("toggleCreateBtn"),
+  toggleJoinBtn: document.getElementById("toggleJoinBtn"),
+  loginToggleIcon: document.getElementById("loginToggleIcon"),
+  createToggleIcon: document.getElementById("createToggleIcon"),
+  joinToggleIcon: document.getElementById("joinToggleIcon"),
+  loginAuthContent: document.getElementById("loginAuthContent"),
+  createAuthContent: document.getElementById("createAuthContent"),
+  joinAuthContent: document.getElementById("joinAuthContent"),
   loginForm: document.getElementById("loginForm"),
   createForm: document.getElementById("createForm"),
   joinForm: document.getElementById("joinForm"),
@@ -151,23 +157,39 @@ function showAuth(show) {
   el.appRoot.classList.toggle("hidden", show);
 }
 
-function renderAuthTabs() {
-  const tabButtons = [
-    [el.loginTabBtn, "login"],
-    [el.createTabBtn, "create"],
-    [el.joinTabBtn, "join"]
+function renderAuthSections() {
+  const sections = [
+    {
+      key: "login",
+      button: el.toggleLoginBtn,
+      content: el.loginAuthContent,
+      icon: el.loginToggleIcon
+    },
+    {
+      key: "create",
+      button: el.toggleCreateBtn,
+      content: el.createAuthContent,
+      icon: el.createToggleIcon
+    },
+    {
+      key: "join",
+      button: el.toggleJoinBtn,
+      content: el.joinAuthContent,
+      icon: el.joinToggleIcon
+    }
   ];
-  tabButtons.forEach(([button, tab]) => {
-    button.classList.toggle("active", auth.activeTab === tab);
+
+  sections.forEach((section) => {
+    const isOpen = auth.activeSection === section.key;
+    section.content.hidden = !isOpen;
+    section.button.setAttribute("aria-expanded", String(isOpen));
+    section.icon.textContent = isOpen ? "−" : "+";
   });
-  el.loginForm.hidden = auth.activeTab !== "login";
-  el.createForm.hidden = auth.activeTab !== "create";
-  el.joinForm.hidden = auth.activeTab !== "join";
 }
 
-function setAuthTab(tab) {
-  auth.activeTab = tab;
-  renderAuthTabs();
+function setAuthSection(section) {
+  auth.activeSection = section;
+  renderAuthSections();
   setAuthStatus("");
 }
 
@@ -686,7 +708,7 @@ async function initializeAuth() {
     await completeAuth(payload);
   } catch {
     showAuth(true);
-    renderAuthTabs();
+    renderAuthSections();
   }
 }
 
@@ -765,7 +787,7 @@ async function handleLogout() {
   auth.team = null;
   auth.saveTimer = null;
   renderSessionInfo();
-  setAuthTab("login");
+  setAuthSection("login");
   setAuthStatus("You have been logged out.");
   showAuth(true);
 }
@@ -938,9 +960,9 @@ function onResetDraft() {
 }
 
 function attachEvents() {
-  el.loginTabBtn.addEventListener("click", () => setAuthTab("login"));
-  el.createTabBtn.addEventListener("click", () => setAuthTab("create"));
-  el.joinTabBtn.addEventListener("click", () => setAuthTab("join"));
+  el.toggleLoginBtn.addEventListener("click", () => setAuthSection("login"));
+  el.toggleCreateBtn.addEventListener("click", () => setAuthSection("create"));
+  el.toggleJoinBtn.addEventListener("click", () => setAuthSection("join"));
   el.loginForm.addEventListener("submit", handleLoginSubmit);
   el.createForm.addEventListener("submit", handleCreateTeamSubmit);
   el.joinForm.addEventListener("submit", handleJoinTeamSubmit);
@@ -994,7 +1016,7 @@ function attachEvents() {
 
 async function bootstrap() {
   attachEvents();
-  setAuthTab("login");
+  setAuthSection("login");
   await initializeAuth();
 }
 

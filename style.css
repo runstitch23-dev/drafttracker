@@ -51,26 +51,29 @@ body {
   font-size: 1.4rem;
 }
 
-.auth-tabs {
-  margin-top: 10px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.auth-actions {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
 }
 
-.auth-tab {
-  background: #fff;
-  color: var(--text);
+.auth-action-block {
   border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fcfdff;
 }
 
-.auth-tab.active {
-  background: var(--accent-soft);
-  border-color: #9cc3ec;
+.auth-toggle {
+  border: 0;
+  border-radius: 0;
+}
+
+.auth-action-content {
+  padding: 10px 12px 12px;
 }
 
 .auth-form {
-  margin-top: 12px;
   display: grid;
   gap: 10px;
 }
