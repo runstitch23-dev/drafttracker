@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -24,6 +28,55 @@ body {
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+.auth-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: min(560px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.auth-card h1 {
+  margin: 0 0 6px;
+  font-size: 1.4rem;
+}
+
+.auth-tabs {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.auth-tab {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.auth-tab.active {
+  background: var(--accent-soft);
+  border-color: #9cc3ec;
+}
+
+.auth-form {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.error-text {
+  color: var(--danger);
 }
 
 .app {
@@ -50,6 +103,21 @@ body {
 .app-header p {
   margin: 0;
   color: var(--muted);
+}
+
+.session-bar {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.session-info {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .panel {

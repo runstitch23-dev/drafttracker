@@ -1,4 +1,5 @@
 const STORAGE_KEY = "mm_draft_tracker_v1";
+const SYNC_DEBOUNCE_MS = 350;
 
 const state = {
   teams: 15,
@@ -13,7 +14,37 @@ const state = {
   currentPick: 1
 };
 
+const auth = {
+  user: null,
+  team: null,
+  socket: null,
+  activeTab: "login",
+  applyingRemoteState: false,
+  saveTimer: null
+};
+
 const el = {
+  authGate: document.getElementById("authGate"),
+  appRoot: document.getElementById("appRoot"),
+  loginTabBtn: document.getElementById("loginTabBtn"),
+  createTabBtn: document.getElementById("createTabBtn"),
+  joinTabBtn: document.getElementById("joinTabBtn"),
+  loginForm: document.getElementById("loginForm"),
+  createForm: document.getElementById("createForm"),
+  joinForm: document.getElementById("joinForm"),
+  loginEmailInput: document.getElementById("loginEmailInput"),
+  loginPasswordInput: document.getElementById("loginPasswordInput"),
+  createNameInput: document.getElementById("createNameInput"),
+  createEmailInput: document.getElementById("createEmailInput"),
+  createPasswordInput: document.getElementById("createPasswordInput"),
+  createTeamNameInput: document.getElementById("createTeamNameInput"),
+  joinNameInput: document.getElementById("joinNameInput"),
+  joinEmailInput: document.getElementById("joinEmailInput"),
+  joinPasswordInput: document.getElementById("joinPasswordInput"),
+  joinCodeInput: document.getElementById("joinCodeInput"),
+  authStatus: document.getElementById("authStatus"),
+  sessionInfo: document.getElementById("sessionInfo"),
+  logoutBtn: document.getElementById("logoutBtn"),
   toggleSetupBtn: document.getElementById("toggleSetupBtn"),
   toggleSetupIcon: document.getElementById("toggleSetupIcon"),
   setupContent: document.getElementById("setupContent"),
@@ -70,6 +101,82 @@ function getTeamColor(teamSlot) {
   const boundedSlot = Math.max(1, Math.min(teamSlot, safeTeams));
   const hue = Math.round(((boundedSlot - 1) * 360) / safeTeams);
   return `hsl(${hue} 68% 42%)`;
+}
+
+function getStorageKey() {
+  if (auth.team?.id) {
+    return `${STORAGE_KEY}_${auth.team.id}`;
+  }
+  return STORAGE_KEY;
+}
+
+async function apiRequest(url, options = {}) {
+  const response = await fetch(url, {
+    method: options.method || "GET",
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {})
+    },
+    credentials: "same-origin",
+    body: options.body ? JSON.stringify(options.body) : undefined
+  });
+
+  if (!response.ok) {
+    let message = `Request failed (${response.status})`;
+    try {
+      const payload = await response.json();
+      if (payload?.error) {
+        message = payload.error;
+      }
+    } catch {
+      // ignore malformed payloads
+    }
+    throw new Error(message);
+  }
+
+  if (response.status === 204) {
+    return null;
+  }
+
+  return response.json();
+}
+
+function setAuthStatus(message, isError = false) {
+  el.authStatus.textContent = message;
+  el.authStatus.classList.toggle("error-text", Boolean(isError));
+}
+
+function showAuth(show) {
+  el.authGate.classList.toggle("hidden", !show);
+  el.appRoot.classList.toggle("hidden", show);
+}
+
+function renderAuthTabs() {
+  const tabButtons = [
+    [el.loginTabBtn, "login"],
+    [el.createTabBtn, "create"],
+    [el.joinTabBtn, "join"]
+  ];
+  tabButtons.forEach(([button, tab]) => {
+    button.classList.toggle("active", auth.activeTab === tab);
+  });
+  el.loginForm.hidden = auth.activeTab !== "login";
+  el.createForm.hidden = auth.activeTab !== "create";
+  el.joinForm.hidden = auth.activeTab !== "join";
+}
+
+function setAuthTab(tab) {
+  auth.activeTab = tab;
+  renderAuthTabs();
+  setAuthStatus("");
+}
+
+function renderSessionInfo() {
+  if (!auth.user || !auth.team) {
+    el.sessionInfo.textContent = "";
+    return;
+  }
+  el.sessionInfo.textContent = `Signed in as ${auth.user.name} | Team Workspace: ${auth.team.name} | Code: ${auth.team.code}`;
 }
 
 function pickToRound(pickNumber, teams) {
@@ -244,28 +351,47 @@ function findTournamentPlayer(name, teamHint = "") {
   return exact || matches[0];
 }
 
+function applyStateSnapshot(snapshot) {
+  if (!snapshot || typeof snapshot !== "object") {
+    return;
+  }
+
+  state.teams = Number(snapshot.teams) || 15;
+  state.rounds = Number(snapshot.rounds) || 10;
+  state.myTeam = Number(snapshot.myTeam) || 1;
+  state.snake = Boolean(snapshot.snake);
+  state.draftTeams = Array.isArray(snapshot.draftTeams) ? snapshot.draftTeams : [];
+  state.setupOpen = Boolean(snapshot.setupOpen);
+  state.rankingsOpen = Boolean(snapshot.rankingsOpen);
+  state.rankings = Array.isArray(snapshot.rankings) ? snapshot.rankings : [];
+  state.picks = Array.isArray(snapshot.picks) ? snapshot.picks : [];
+  state.currentPick = Number(snapshot.currentPick) || 1;
+  ensureDraftTeamsLength(state.teams);
+}
+
+function scheduleServerSync() {
+  if (!auth.user || !auth.socket || !auth.socket.connected || auth.applyingRemoteState) {
+    return;
+  }
+  if (auth.saveTimer) {
+    clearTimeout(auth.saveTimer);
+  }
+  auth.saveTimer = setTimeout(() => {
+    auth.socket.emit("state:update", { state });
+  }, SYNC_DEBOUNCE_MS);
+}
+
 function persist() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  localStorage.setItem(getStorageKey(), JSON.stringify(state));
+  scheduleServerSync();
 }
 
 function loadPersisted() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(getStorageKey());
     if (!raw) return;
     const saved = JSON.parse(raw);
-    if (!saved || typeof saved !== "object") return;
-
-    state.teams = Number(saved.teams) || state.teams;
-    state.rounds = Number(saved.rounds) || state.rounds;
-    state.myTeam = Number(saved.myTeam) || state.myTeam;
-    state.snake = Boolean(saved.snake);
-    state.draftTeams = Array.isArray(saved.draftTeams) ? saved.draftTeams : [];
-    state.setupOpen = Boolean(saved.setupOpen);
-    state.rankingsOpen = Boolean(saved.rankingsOpen);
-    state.rankings = Array.isArray(saved.rankings) ? saved.rankings : [];
-    state.picks = Array.isArray(saved.picks) ? saved.picks : [];
-    state.currentPick = Number(saved.currentPick) || state.currentPick;
-    ensureDraftTeamsLength(state.teams);
+    applyStateSnapshot(saved);
   } catch {
     // ignore invalid local storage payloads
   }
@@ -432,7 +558,7 @@ function renderDraftLog() {
   el.draftLogBody.innerHTML = "";
   if (!state.picks.length) {
     const row = document.createElement("tr");
-    row.innerHTML = '<td colspan="5" class="muted">No picks logged yet.</td>';
+    row.innerHTML = '<td colspan="6" class="muted">No picks logged yet.</td>';
     el.draftLogBody.appendChild(row);
     return;
   }
@@ -450,6 +576,7 @@ function renderDraftLog() {
       <td>${pick.pick}</td>
       <td>${escapeHtml(pick.player)}</td>
       <td>${escapeHtml(pick.teamName || "-")}</td>
+      <td>${escapeHtml(pick.region || "-")}</td>
       <td><span class="team-pill" style="--team-color:${teamColor}">${escapeHtml(draftTeamLabel)}</span></td>
       <td>${pick.round}</td>
     `;
@@ -499,6 +626,148 @@ function syncRankingsInput() {
 
 function setDraftMessage(text) {
   el.draftStatus.textContent = text;
+}
+
+function connectSocket() {
+  if (typeof window.io !== "function") {
+    setDraftMessage("Realtime sync unavailable: socket.io client not loaded.");
+    return;
+  }
+
+  if (auth.socket) {
+    auth.socket.disconnect();
+    auth.socket = null;
+  }
+
+  auth.socket = window.io();
+  auth.socket.on("connect", () => {
+    setDraftMessage(`Live sync connected for ${auth.team.name}.`);
+  });
+  auth.socket.on("state:sync", (payload) => {
+    if (!payload || typeof payload.state !== "object") {
+      return;
+    }
+    auth.applyingRemoteState = true;
+    applyStateSnapshot(payload.state);
+    updateAll();
+    auth.applyingRemoteState = false;
+    if (payload.updatedBy && payload.updatedBy !== auth.user?.name) {
+      setDraftMessage(`Live update received from ${payload.updatedBy}.`);
+    }
+  });
+  auth.socket.on("connect_error", () => {
+    setDraftMessage("Live sync temporarily disconnected.");
+  });
+}
+
+async function hydrateTeamState() {
+  const payload = await apiRequest("/api/state");
+  if (payload?.state && typeof payload.state === "object") {
+    applyStateSnapshot(payload.state);
+  }
+}
+
+async function completeAuth(authPayload) {
+  auth.user = authPayload.user;
+  auth.team = authPayload.team;
+
+  setAuthStatus("");
+  renderSessionInfo();
+  showAuth(false);
+  loadPersisted();
+  await hydrateTeamState();
+  connectSocket();
+  updateAll();
+}
+
+async function initializeAuth() {
+  try {
+    const payload = await apiRequest("/api/me");
+    await completeAuth(payload);
+  } catch {
+    showAuth(true);
+    renderAuthTabs();
+  }
+}
+
+async function handleLoginSubmit(event) {
+  event.preventDefault();
+  setAuthStatus("Signing in...");
+  try {
+    const payload = await apiRequest("/api/auth/login", {
+      method: "POST",
+      body: {
+        email: el.loginEmailInput.value.trim(),
+        password: el.loginPasswordInput.value
+      }
+    });
+    await completeAuth(payload);
+  } catch (error) {
+    setAuthStatus(error.message, true);
+  }
+}
+
+async function handleCreateTeamSubmit(event) {
+  event.preventDefault();
+  setAuthStatus("Creating team workspace...");
+  try {
+    const payload = await apiRequest("/api/auth/create-team", {
+      method: "POST",
+      body: {
+        name: el.createNameInput.value.trim(),
+        email: el.createEmailInput.value.trim(),
+        password: el.createPasswordInput.value,
+        teamName: el.createTeamNameInput.value.trim()
+      }
+    });
+    await completeAuth(payload);
+    setDraftMessage(`Team created. Share code ${auth.team.code} with teammates.`);
+  } catch (error) {
+    setAuthStatus(error.message, true);
+  }
+}
+
+async function handleJoinTeamSubmit(event) {
+  event.preventDefault();
+  setAuthStatus("Joining team workspace...");
+  try {
+    const payload = await apiRequest("/api/auth/join-team", {
+      method: "POST",
+      body: {
+        name: el.joinNameInput.value.trim(),
+        email: el.joinEmailInput.value.trim(),
+        password: el.joinPasswordInput.value,
+        teamCode: el.joinCodeInput.value.trim().toUpperCase()
+      }
+    });
+    await completeAuth(payload);
+  } catch (error) {
+    setAuthStatus(error.message, true);
+  }
+}
+
+async function handleLogout() {
+  try {
+    await apiRequest("/api/auth/logout", { method: "POST" });
+  } catch {
+    // ignore logout request failures and clear local session anyway
+  }
+
+  if (auth.socket) {
+    auth.socket.disconnect();
+    auth.socket = null;
+  }
+  if (auth.saveTimer) {
+    clearTimeout(auth.saveTimer);
+  }
+
+  auth.user = null;
+  auth.team = null;
+  auth.saveTimer = null;
+  renderSessionInfo();
+  setAuthTab("login");
+  setAuthStatus("You have been logged out.");
+  showAuth(true);
 }
 
 function updateAll() {
@@ -618,6 +887,7 @@ function onAddPick({ autoBest = false } = {}) {
     team,
     player: resolvedName,
     teamName: resolvedTeamName || "",
+    region: "",
     isMine: Boolean(el.markMineInput.checked) || team === state.myTeam
   };
 
@@ -668,6 +938,14 @@ function onResetDraft() {
 }
 
 function attachEvents() {
+  el.loginTabBtn.addEventListener("click", () => setAuthTab("login"));
+  el.createTabBtn.addEventListener("click", () => setAuthTab("create"));
+  el.joinTabBtn.addEventListener("click", () => setAuthTab("join"));
+  el.loginForm.addEventListener("submit", handleLoginSubmit);
+  el.createForm.addEventListener("submit", handleCreateTeamSubmit);
+  el.joinForm.addEventListener("submit", handleJoinTeamSubmit);
+  el.logoutBtn.addEventListener("click", handleLogout);
+
   el.toggleSetupBtn.addEventListener("click", () => {
     state.setupOpen = !state.setupOpen;
     updateAll();
@@ -714,10 +992,10 @@ function attachEvents() {
   el.undoPickBtn.addEventListener("click", onUndoPick);
 }
 
-function bootstrap() {
-  loadPersisted();
+async function bootstrap() {
   attachEvents();
-  updateAll();
+  setAuthTab("login");
+  await initializeAuth();
 }
 
 bootstrap();

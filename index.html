@@ -7,10 +7,80 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
+  <section id="authGate" class="auth-gate">
+    <div class="auth-card">
+      <h1>Team Draft Workspace</h1>
+      <p class="muted">Log in, create a team, or join a team to collaborate in real time.</p>
+      <div class="auth-tabs">
+        <button id="loginTabBtn" class="auth-tab active" data-tab="login" type="button">Login</button>
+        <button id="createTabBtn" class="auth-tab" data-tab="create" type="button">Create Team</button>
+        <button id="joinTabBtn" class="auth-tab" data-tab="join" type="button">Join Team</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label>
+          Email
+          <input id="loginEmailInput" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Password
+          <input id="loginPasswordInput" type="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="createForm" class="auth-form" hidden>
+        <label>
+          Your Name
+          <input id="createNameInput" type="text" required>
+        </label>
+        <label>
+          Email
+          <input id="createEmailInput" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Password (min 6 chars)
+          <input id="createPasswordInput" type="password" autocomplete="new-password" minlength="6" required>
+        </label>
+        <label>
+          Team Workspace Name
+          <input id="createTeamNameInput" type="text" placeholder="Example: RunStitch Draft Room" required>
+        </label>
+        <button type="submit">Create Team Workspace</button>
+      </form>
+
+      <form id="joinForm" class="auth-form" hidden>
+        <label>
+          Your Name
+          <input id="joinNameInput" type="text" required>
+        </label>
+        <label>
+          Email
+          <input id="joinEmailInput" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Password (min 6 chars)
+          <input id="joinPasswordInput" type="password" autocomplete="new-password" minlength="6" required>
+        </label>
+        <label>
+          Team Code
+          <input id="joinCodeInput" type="text" placeholder="Example: A1B2C3" required>
+        </label>
+        <button type="submit">Join Team Workspace</button>
+      </form>
+
+      <p id="authStatus" class="muted"></p>
+    </div>
+  </section>
+
+  <main id="appRoot" class="app hidden">
     <header class="app-header">
       <h1>March Madness Draft Tracker</h1>
       <p>Track picks live, keep your roster updated, and monitor best available players.</p>
+      <div class="session-bar">
+        <p id="sessionInfo" class="session-info"></p>
+        <button id="logoutBtn" type="button" class="secondary">Log Out</button>
+      </div>
     </header>
 
     <section class="panel settings">
@@ -124,7 +194,8 @@ Florida: Thomas Haugh"></textarea>
             <tr>
               <th>Draft Pick #</th>
               <th>Player Name</th>
-              <th>Team He Plays For</th>
+              <th>Team</th>
+              <th>Region</th>
               <th>Draft Team</th>
               <th>Round</th>
             </tr>
@@ -152,6 +223,7 @@ Florida: Thomas Haugh"></textarea>
     </section>
   </main>
 
+  <script src="/socket.io/socket.io.js"></script>
   <script src="tournamentPlayers.js"></script>
   <script src="script.js"></script>
 </body>
