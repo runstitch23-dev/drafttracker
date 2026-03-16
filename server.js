@@ -8,7 +8,8 @@ const { Server } = require("socket.io");
 
 const PORT = Number(process.env.PORT) || 3000;
 const SESSION_SECRET = process.env.SESSION_SECRET || "change-this-session-secret";
-const DATA_DIR = path.join(__dirname, "data");
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const DATA_DIR = IS_VERCEL ? path.join("/tmp", "drafttracker-data") : path.join(__dirname, "data");
 const DATA_FILE = path.join(DATA_DIR, "db.json");
 
 function ensureDbFile() {
@@ -118,8 +119,25 @@ function defaultState() {
 }
 
 const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
+const server = IS_VERCEL ? null : http.createServer(app);
+const io = server ? new Server(server) : null;
+
+app.use((req, res, next) => {
+  const origin = String(req.headers.origin || "");
+  const isLocalOrigin = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin);
+  if (isLocalOrigin) {
+    res.header("Access-Control-Allow-Origin", origin);
+    res.header("Vary", "Origin");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,OPTIONS");
+  }
+  if (req.method === "OPTIONS") {
+    res.sendStatus(204);
+    return;
+  }
+  next();
+});
 
 app.use(express.json({ limit: "2mb" }));
 
@@ -304,63 +322,72 @@ app.put("/api/state", requireAuth, (req, res) => {
   req.db.states[req.user.teamId] = payload;
   writeDb(req.db);
 
-  io.to(req.user.teamId).emit("state:sync", {
-    state: payload,
-    updatedBy: req.user.name,
-    updatedAt: new Date().toISOString()
-  });
+  if (io) {
+    io.to(req.user.teamId).emit("state:sync", {
+      state: payload,
+      updatedBy: req.user.name,
+      updatedAt: new Date().toISOString()
+    });
+  }
 
   res.json({ ok: true });
 });
 
-io.use((socket, next) => {
-  sessionMiddleware(socket.request, {}, next);
-});
-
-io.use((socket, next) => {
-  const db = readDb();
-  const user = db.users.find((entry) => entry.id === socket.request.session.userId);
-  if (!user) {
-    next(new Error("unauthorized"));
-    return;
-  }
-  const team = db.teams.find((entry) => entry.id === user.teamId);
-  if (!team) {
-    next(new Error("team_not_found"));
-    return;
-  }
-  socket.user = user;
-  socket.team = team;
-  next();
-});
-
-io.on("connection", (socket) => {
-  socket.join(socket.user.teamId);
-  socket.emit("team:meta", {
-    team: sanitizeTeam(socket.team),
-    user: sanitizeUser(socket.user)
+if (io) {
+  io.use((socket, next) => {
+    sessionMiddleware(socket.request, {}, next);
   });
 
-  socket.on("state:update", (payload) => {
-    if (!payload || !isObject(payload.state)) {
+  io.use((socket, next) => {
+    const db = readDb();
+    const user = db.users.find((entry) => entry.id === socket.request.session.userId);
+    if (!user) {
+      next(new Error("unauthorized"));
       return;
     }
+    const team = db.teams.find((entry) => entry.id === user.teamId);
+    if (!team) {
+      next(new Error("team_not_found"));
+      return;
+    }
+    socket.user = user;
+    socket.team = team;
+    next();
+  });
 
-    const db = readDb();
-    db.states[socket.user.teamId] = payload.state;
-    writeDb(db);
+  io.on("connection", (socket) => {
+    socket.join(socket.user.teamId);
+    socket.emit("team:meta", {
+      team: sanitizeTeam(socket.team),
+      user: sanitizeUser(socket.user)
+    });
 
-    socket.to(socket.user.teamId).emit("state:sync", {
-      state: payload.state,
-      updatedBy: socket.user.name,
-      updatedAt: new Date().toISOString()
+    socket.on("state:update", (payload) => {
+      if (!payload || !isObject(payload.state)) {
+        return;
+      }
+
+      const db = readDb();
+      db.states[socket.user.teamId] = payload.state;
+      writeDb(db);
+
+      socket.to(socket.user.teamId).emit("state:sync", {
+        state: payload.state,
+        updatedBy: socket.user.name,
+        updatedAt: new Date().toISOString()
+      });
     });
   });
-});
+}
 
 app.use(express.static(__dirname));
 
-server.listen(PORT, () => {
-  ensureDbFile();
-  console.log(`Draft tracker running on http://localhost:${PORT}`);
-});
+ensureDbFile();
+
+if (server) {
+  server.listen(PORT, () => {
+    console.log(`Draft tracker running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

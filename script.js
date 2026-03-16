@@ -19,6 +19,7 @@ const auth = {
   user: null,
   team: null,
   socket: null,
+  apiBase: "",
   activeSection: "login",
   applyingRemoteState: false,
   saveTimer: null
@@ -98,6 +99,22 @@ function normalizeName(name) {
   return name.trim().toLowerCase().replace(/\s+/g, " ");
 }
 
+function normalizeTeamKey(name) {
+  return String(name || "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[’']/g, "")
+    .replace(/\./g, "")
+    .replace(/\bthe\b/g, " ")
+    .replace(/\buniversity\b/g, " ")
+    .replace(/\bcollege\b/g, " ")
+    .replace(/\bsaint\b/g, " st ")
+    .replace(/\bstate\b/g, " state ")
+    .replace(/[^a-z0-9 ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function canonicalizeRegion(value) {
   const raw = String(value || "").trim();
   if (!raw) {
@@ -117,12 +134,85 @@ function isRegionToken(value) {
 }
 
 function getRegionForTeam(teamName) {
-  const key = normalizeName(teamName || "");
+  const key = normalizeTeamKey(teamName || "");
   if (!key) {
     return "";
   }
   return state.teamRegions[key] || "";
 }
+
+const teamAliasMap = new Map();
+
+function indexTeamAlias(alias, canonical) {
+  const key = normalizeTeamKey(alias);
+  if (!key) {
+    return;
+  }
+  if (!teamAliasMap.has(key)) {
+    teamAliasMap.set(key, canonical);
+  }
+}
+
+function buildTeamAliasMap() {
+  const uniqueTeams = Array.from(new Set(tournamentPlayers.map((player) => player.team).filter(Boolean)));
+  uniqueTeams.forEach((team) => {
+    indexTeamAlias(team, team);
+    indexTeamAlias(team.replace(/\bst\b/gi, "Saint"), team);
+    indexTeamAlias(team.replace(/\bsaint\b/gi, "St"), team);
+    indexTeamAlias(team.replace(/\s*\(.*?\)\s*/g, " "), team);
+  });
+
+  const hardcodedAliases = {
+    uconn: "UConn",
+    connecticut: "UConn",
+    "st johns": "St John's",
+    "saint johns": "St John's",
+    "st marys": "Saint Mary's",
+    "saint marys": "Saint Mary's",
+    "miami fl": "Miami",
+    "miami florida": "Miami",
+    "north carolina tar heels": "North Carolina",
+    "texas am": "Texas A&M",
+    "texas a and m": "Texas A&M",
+    "cal baptist": "CA Baptist",
+    "california baptist": "CA Baptist",
+    "michigan state": "Michigan St",
+    "tennessee state": "Tennessee St",
+    "north dakota state": "N Dakota St"
+  };
+
+  Object.entries(hardcodedAliases).forEach(([alias, canonical]) => {
+    indexTeamAlias(alias, canonical);
+  });
+}
+
+function resolveTeamName(rawTeam) {
+  const teamName = String(rawTeam || "").trim();
+  if (!teamName) {
+    return "";
+  }
+
+  const key = normalizeTeamKey(teamName);
+  if (teamAliasMap.has(key)) {
+    return teamAliasMap.get(key);
+  }
+
+  // Soft fallback: partial key matching for common bracket name variants.
+  if (key.length >= 4) {
+    for (const [aliasKey, canonical] of teamAliasMap.entries()) {
+      if (aliasKey === key) {
+        return canonical;
+      }
+      if (aliasKey.includes(key) || key.includes(aliasKey)) {
+        return canonical;
+      }
+    }
+  }
+
+  return teamName;
+}
+
+buildTeamAliasMap();
 
 function escapeHtml(text) {
   return String(text)
@@ -147,40 +237,73 @@ function getStorageKey() {
   return STORAGE_KEY;
 }
 
-async function apiRequest(url, options = {}) {
-  let response;
-  try {
-    response = await fetch(url, {
-      method: options.method || "GET",
-      headers: {
-        "Content-Type": "application/json",
-        ...(options.headers || {})
-      },
-      credentials: "same-origin",
-      body: options.body ? JSON.stringify(options.body) : undefined
-    });
-  } catch {
-    throw new Error("Cannot reach backend API. Start with npm start and open http://localhost:3000 or http://localhost:3001.");
-  }
+function getApiCandidates() {
+  const candidates = [];
+  const currentOrigin = window.location.origin;
+  const defaults = [currentOrigin, "http://localhost:3001", "http://127.0.0.1:3001", "http://localhost:3000", "http://127.0.0.1:3000"];
 
-  if (!response.ok) {
-    let message = `Request failed (${response.status})`;
-    try {
-      const payload = await response.json();
-      if (payload?.error) {
-        message = payload.error;
-      }
-    } catch {
-      // ignore malformed payloads
+  defaults.forEach((origin) => {
+    if (!candidates.includes(origin)) {
+      candidates.push(origin);
     }
-    throw new Error(message);
+  });
+
+  return candidates;
+}
+
+async function apiRequest(url, options = {}) {
+  const path = String(url || "");
+  const candidates = auth.apiBase ? [auth.apiBase] : getApiCandidates();
+  let lastError = null;
+
+  for (const base of candidates) {
+    const fullUrl = path.startsWith("http") ? path : `${base}${path}`;
+    let response;
+    try {
+      response = await fetch(fullUrl, {
+        method: options.method || "GET",
+        headers: {
+          "Content-Type": "application/json",
+          ...(options.headers || {})
+        },
+        credentials: "include",
+        body: options.body ? JSON.stringify(options.body) : undefined
+      });
+    } catch (error) {
+      lastError = error;
+      continue;
+    }
+
+    if (response.status === 404 && !auth.apiBase) {
+      lastError = new Error(`Not found on ${base}`);
+      continue;
+    }
+
+    if (!response.ok) {
+      let message = `Request failed (${response.status})`;
+      try {
+        const payload = await response.json();
+        if (payload?.error) {
+          message = payload.error;
+        }
+      } catch {
+        // ignore malformed payloads
+      }
+      throw new Error(message);
+    }
+
+    if (!auth.apiBase && !path.startsWith("http")) {
+      auth.apiBase = base;
+    }
+
+    if (response.status === 204) {
+      return null;
+    }
+
+    return response.json();
   }
 
-  if (response.status === 204) {
-    return null;
-  }
-
-  return response.json();
+  throw new Error("Cannot reach backend API. Start with npm start and open http://localhost:3000 or http://localhost:3001.");
 }
 
 function setAuthStatus(message, isError = false) {
@@ -410,12 +533,50 @@ function findTournamentPlayer(name, teamHint = "") {
 }
 
 function addTeamRegionEntry(targetMap, team, region) {
-  const teamName = String(team || "").trim();
+  const teamName = resolveTeamName(team);
   const regionName = canonicalizeRegion(region);
   if (!teamName || !regionName) {
     return;
   }
-  targetMap[normalizeName(teamName)] = regionName;
+  targetMap[normalizeTeamKey(teamName)] = regionName;
+}
+
+function detectRegionLabel(line) {
+  const match = String(line || "").match(/\b(east|west|south|mid[- ]?west)\b/i);
+  if (!match) {
+    return "";
+  }
+  return canonicalizeRegion(match[1]);
+}
+
+function extractTeamCandidatesFromRegionLine(line) {
+  const raw = String(line || "").trim();
+  if (!raw) {
+    return [];
+  }
+
+  const cleaned = raw
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\[[^\]]*\]/g, " ")
+    .replace(/\b\d+\b/g, " ")
+    .replace(/\bvs\.?\b/gi, ",")
+    .replace(/\//g, ",")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  if (!cleaned) {
+    return [];
+  }
+
+  return cleaned
+    .split(/[;,]/)
+    .map((part) => part.trim())
+    .filter((part) => {
+      if (!part) return false;
+      if (!/[a-z]/i.test(part)) return false;
+      const low = part.toLowerCase();
+      return !/(round|final four|championship|regional|play in|first four|seed|winner|game|ncaa)/i.test(low);
+    });
 }
 
 function parseBracketRegionMap(text) {
@@ -446,9 +607,17 @@ function parseBracketRegionMap(text) {
     // fall through to line-based parsing
   }
 
+  let currentRegion = "";
   source.split(/\r?\n/).forEach((rawLine) => {
     const line = rawLine.trim();
     if (!line) return;
+
+    const regionInLine = detectRegionLabel(line);
+    const looksLikeRegionHeading = regionInLine && line.split(/\s+/).length <= 5 && !/[,:;|\t]/.test(line);
+    if (looksLikeRegionHeading) {
+      currentRegion = regionInLine;
+      return;
+    }
 
     // Region: Team A, Team B
     const colonMatch = line.match(/^([^:]+):\s*(.+)$/);
@@ -499,10 +668,46 @@ function parseBracketRegionMap(text) {
       return;
     }
 
-    addTeamRegionEntry(map, parts[0], parts[1]);
+    addTeamRegionEntry(map, parts[0], parts[1]); // Team,Region fallback
+    if (parts.length > 2 && isRegionToken(parts[1])) {
+      addTeamRegionEntry(map, [parts[0], ...parts.slice(2)].join(" "), parts[1]);
+    }
+    return;
   });
 
+  // Region block fallback: heading line + team lines.
+  if (!Object.keys(map).length) {
+    currentRegion = "";
+    source.split(/\r?\n/).forEach((rawLine) => {
+      const line = rawLine.trim();
+      if (!line) return;
+      const regionInLine = detectRegionLabel(line);
+      if (regionInLine && line.split(/\s+/).length <= 6) {
+        currentRegion = regionInLine;
+        return;
+      }
+      if (!currentRegion) {
+        return;
+      }
+      extractTeamCandidatesFromRegionLine(line).forEach((team) => {
+        addTeamRegionEntry(map, team, currentRegion);
+      });
+    });
+  }
+
   return map;
+}
+
+function countMappedTournamentTeams(regionMap) {
+  const uniqueTeams = Array.from(new Set(tournamentPlayers.map((player) => player.team).filter(Boolean)));
+  let count = 0;
+  uniqueTeams.forEach((team) => {
+    const key = normalizeTeamKey(resolveTeamName(team));
+    if (regionMap[key]) {
+      count += 1;
+    }
+  });
+  return count;
 }
 
 function applyStateSnapshot(snapshot) {
@@ -815,13 +1020,17 @@ async function handleBracketFileUpload(event) {
     const parsedMap = parseBracketRegionMap(text);
     const count = Object.keys(parsedMap).length;
     if (!count) {
-      throw new Error("No team-region mappings detected. Use CSV/TXT/JSON like Duke,East.");
+      const pdfHint = file.name.toLowerCase().endsWith(".pdf")
+        ? "PDF text extraction can fail on scanned brackets. Try CSV/TXT with Team,Region."
+        : "Use CSV/TXT/JSON like Duke,East.";
+      throw new Error(`No team-region mappings detected. ${pdfHint}`);
     }
     state.teamRegions = {
       ...state.teamRegions,
       ...parsedMap
     };
-    setBracketStatus(`Loaded ${count} team-region mappings from ${file.name}.`);
+    const mappedTeams = countMappedTournamentTeams(state.teamRegions);
+    setBracketStatus(`Loaded ${count} mappings from ${file.name}. Matched ${mappedTeams} tournament teams.`);
     updateAll();
   } catch (error) {
     setBracketStatus(error.message || "Could not parse bracket file.", true);
@@ -881,11 +1090,15 @@ async function completeAuth(authPayload) {
 
   setAuthStatus("");
   renderSessionInfo();
-  showAuth(false);
   loadPersisted();
-  await hydrateTeamState();
+  try {
+    await hydrateTeamState();
+  } catch (error) {
+    setDraftMessage(`Signed in, but failed to load shared state (${error.message}). Using local state.`);
+  }
   connectSocket();
   updateAll();
+  showAuth(false);
 }
 
 async function initializeAuth() {
