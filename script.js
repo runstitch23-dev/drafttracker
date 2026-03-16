@@ -67,9 +67,6 @@ const el = {
   saveSetupBtn: document.getElementById("saveSetupBtn"),
   resetDraftBtn: document.getElementById("resetDraftBtn"),
   rankingsInput: document.getElementById("rankingsInput"),
-  bracketFileInput: document.getElementById("bracketFileInput"),
-  clearRegionMapBtn: document.getElementById("clearRegionMapBtn"),
-  bracketStatus: document.getElementById("bracketStatus"),
   loadRankingsBtn: document.getElementById("loadRankingsBtn"),
   clearRankingsBtn: document.getElementById("clearRankingsBtn"),
   rankingsStatus: document.getElementById("rankingsStatus"),
@@ -94,6 +91,30 @@ const el = {
 };
 
 const tournamentPlayers = Array.isArray(window.TOURNAMENT_PLAYERS) ? window.TOURNAMENT_PLAYERS : [];
+const defaultTeamRegions = {};
+
+function loadDefaultTeamRegions() {
+  const raw = window.DEFAULT_TEAM_REGIONS_RAW;
+  if (!raw) {
+    return;
+  }
+
+  if (Array.isArray(raw)) {
+    raw.forEach((entry) => {
+      if (!entry || typeof entry !== "object") {
+        return;
+      }
+      addTeamRegionEntry(defaultTeamRegions, entry.team || entry.school || entry.name, entry.region);
+    });
+    return;
+  }
+
+  if (typeof raw === "object") {
+    Object.entries(raw).forEach(([team, region]) => {
+      addTeamRegionEntry(defaultTeamRegions, team, region);
+    });
+  }
+}
 
 function normalizeName(name) {
   return name.trim().toLowerCase().replace(/\s+/g, " ");
@@ -138,7 +159,7 @@ function getRegionForTeam(teamName) {
   if (!key) {
     return "";
   }
-  return state.teamRegions[key] || "";
+  return state.teamRegions[key] || defaultTeamRegions[key] || "";
 }
 
 const teamAliasMap = new Map();
@@ -213,6 +234,7 @@ function resolveTeamName(rawTeam) {
 }
 
 buildTeamAliasMap();
+loadDefaultTeamRegions();
 
 function escapeHtml(text) {
   return String(text)
@@ -723,7 +745,7 @@ function applyStateSnapshot(snapshot) {
   state.teamRegions = {};
   if (snapshot.teamRegions && typeof snapshot.teamRegions === "object") {
     Object.entries(snapshot.teamRegions).forEach(([teamKey, region]) => {
-      const normalizedTeamKey = normalizeName(teamKey);
+      const normalizedTeamKey = normalizeTeamKey(teamKey);
       const normalizedRegion = canonicalizeRegion(region);
       if (normalizedTeamKey && normalizedRegion) {
         state.teamRegions[normalizedTeamKey] = normalizedRegion;
@@ -1002,47 +1024,6 @@ function syncRankingsInput() {
 
 function setDraftMessage(text) {
   el.draftStatus.textContent = text;
-}
-
-function setBracketStatus(text, isError = false) {
-  el.bracketStatus.textContent = text;
-  el.bracketStatus.classList.toggle("error-text", Boolean(isError));
-}
-
-async function handleBracketFileUpload(event) {
-  const file = event.target.files && event.target.files[0];
-  if (!file) {
-    return;
-  }
-
-  try {
-    const text = await file.text();
-    const parsedMap = parseBracketRegionMap(text);
-    const count = Object.keys(parsedMap).length;
-    if (!count) {
-      const pdfHint = file.name.toLowerCase().endsWith(".pdf")
-        ? "PDF text extraction can fail on scanned brackets. Try CSV/TXT with Team,Region."
-        : "Use CSV/TXT/JSON like Duke,East.";
-      throw new Error(`No team-region mappings detected. ${pdfHint}`);
-    }
-    state.teamRegions = {
-      ...state.teamRegions,
-      ...parsedMap
-    };
-    const mappedTeams = countMappedTournamentTeams(state.teamRegions);
-    setBracketStatus(`Loaded ${count} mappings from ${file.name}. Matched ${mappedTeams} tournament teams.`);
-    updateAll();
-  } catch (error) {
-    setBracketStatus(error.message || "Could not parse bracket file.", true);
-  } finally {
-    el.bracketFileInput.value = "";
-  }
-}
-
-function clearRegionMap() {
-  state.teamRegions = {};
-  setBracketStatus("Cleared team-region mapping.");
-  updateAll();
 }
 
 function connectSocket() {
@@ -1334,7 +1315,7 @@ function onAddPick({ autoBest = false } = {}) {
   };
 
   if (resolvedTeamName && resolvedRegion) {
-    state.teamRegions[normalizeName(resolvedTeamName)] = resolvedRegion;
+    state.teamRegions[normalizeTeamKey(resolvedTeamName)] = resolvedRegion;
   }
 
   state.picks.push(pick);
@@ -1432,8 +1413,6 @@ function attachEvents() {
     persist();
   });
   el.resetDraftBtn.addEventListener("click", onResetDraft);
-  el.bracketFileInput.addEventListener("change", handleBracketFileUpload);
-  el.clearRegionMapBtn.addEventListener("click", clearRegionMap);
   el.loadRankingsBtn.addEventListener("click", onLoadRankings);
   el.clearRankingsBtn.addEventListener("click", onClearRankings);
   el.pickPlayerInput.addEventListener("change", suggestRegionFromPlayerInput);

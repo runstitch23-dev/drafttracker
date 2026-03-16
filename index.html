@@ -150,18 +150,6 @@
         <textarea id="rankingsInput" rows="10" placeholder="Example:
 Cameron Boozer - Duke
 Florida: Thomas Haugh"></textarea>
-        <div class="bracket-upload-block">
-          <h3>Official Bracket Upload (Team to Region)</h3>
-          <p class="muted">Upload CSV/TXT/JSON so players can be connected to region automatically. Example line: <code>Duke,East</code>.</p>
-          <label>
-            Bracket File
-            <input id="bracketFileInput" type="file" accept=".csv,.txt,.json,.pdf">
-          </label>
-          <div class="actions">
-            <button id="clearRegionMapBtn" type="button" class="secondary">Clear Region Map</button>
-          </div>
-          <p id="bracketStatus" class="muted"></p>
-        </div>
         <div class="actions">
           <button id="loadRankingsBtn" type="button">Load Rankings</button>
           <button id="clearRankingsBtn" type="button" class="danger">Clear Rankings</button>
@@ -268,6 +256,7 @@ Florida: Thomas Haugh"></textarea>
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="tournamentPlayers.js"></script>
+  <script src="teamRegions.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
